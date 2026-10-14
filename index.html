@@ -16,7 +16,6 @@
 <div class="vignette"></div>
 <div class="grain"><canvas id="grainCanvas"></canvas></div>
 
-<!-- ============ NAV ============ -->
 <nav class="nav">
   <span class="nav__brand">Kirmago</span>
   <span class="nav__year">MMXXV</span>
@@ -80,7 +79,7 @@
       </div>
       <div class="winner__body">
         <div class="winner__rank">Peringkat Ketiga</div>
-        <h2 class="winner__name" id="nameJuara3">Selvi Ain</h2>
+        <h2 class="winner__name" id="nameJuara3">Selvi Ainur Rizma</h2>
         <p class="winner__title">Nilai <span class="winner__grade" id="gradeJuara3">A-</span></p>
         <h3 class="winner__story-title">"Manusia dan Lingkungan"</h3>
         <p class="winner__desc">
@@ -159,7 +158,7 @@
       </div>
       <div class="winner__body">
         <div class="winner__rank winner__rank--grand">Pemenang Utama</div>
-        <h2 class="winner__name winner__name--grand" id="nameJuara1">Irene Alth</h2>
+        <h2 class="winner__name winner__name--grand" id="nameJuara1">Irene Althafunnida</h2>
         <p class="winner__title">Nilai <span class="winner__grade" id="gradeJuara1">S+</span></p>
         <h3 class="winner__story-title">"Merawat Kehidupan"</h3>
         <p class="winner__desc">
@@ -188,7 +187,7 @@
   </div>
 </section>
 
-<!-- ============ JUARA FAVORIT ============ -->
+<!-- ============ JUARA FAVORIT (foto aja) ============ -->
 <section class="reveal-section reveal-section--alt" id="juara-favorit">
   <div class="reveal-section__inner">
     <div class="eyebrow eyebrow--center">Juara Favorit</div>
@@ -204,15 +203,6 @@
         <div class="winner__rank">Pilihan Favorit</div>
         <h2 class="winner__name" id="nameFavorit">Ursila Maulida</h2>
         <p class="winner__title">Nilai <span class="winner__grade" id="gradeFavorit">A-</span></p>
-        <h3 class="winner__story-title">"Karya Pilihan Favorit"</h3>
-        <p class="winner__desc">
-          Karya Ursila Maulida terpilih sebagai Juara Favorit. Cerita lengkap
-          di balik karya ini masih dalam proses konfirmasi bersama fotografer.
-        </p>
-        <p class="winner__desc">
-          <em>Catatan: bagian cerita ini dapat diedit langsung pada file
-          <code>index.html</code> setelah narasi resmi diterima.</em>
-        </p>
       </div>
     </article>
   </div>
@@ -228,6 +218,292 @@
     <div class="recap__grid">
       <div class="recap__item" data-reveal>
         <div class="recap__img"><img id="recapImg3" src="" alt="Juara 3" data-fallback></div>
+        <div class="recap__rank">Juara 3</div>
+        <div class="recap__name" id="recapName3">Selvi Ainur Rizma</div>
+        <div class="recap__title">Nilai A-</div>
+      </div>
+
+      <div class="recap__item" data-reveal>
+        <div class="recap__img"><img id="recapImg2" src="" alt="Juara 2" data-fallback></div>
+        <div class="recap__rank">Juara 2</div>
+        <div class="recap__name" id="recapName2">Najma Asyfa</div>
+        <div class="recap__title">Nilai A</div>
+      </div>
+
+      <div class="recap__item" data-reveal>
+        <div class="recap__img"><img id="recapImg1" src="" alt="Juara 1" data-fallback></div>
+        <div class="recap__rank">Juara 1</div>
+        <div class="recap__name" id="recapName1">Irene Althafunnida</div>
+        <div class="recap__title">Nilai S+</div>
+      </div>
+
+      <div class="recap__item" data-reveal>
+        <div class="recap__img"><img id="recapImgFav" src="" alt="Juara Favorit" data-fallback></div>
+        <div class="recap__rank">Favorit</div>
+        <div class="recap__name" id="recapNameFav">Ursila Maulida</div>
+        <div class="recap__title">Nilai A-</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONNECT ON INSTAGRAM ============ -->
+<section class="connect" id="connect">
+  <div class="connect__inner">
+    <div class="connect__kicker">Connect on Instagram</div>
+    <h2 class="connect__title">Follow the story<br><em>behind the frames.</em></h2>
+    <a class="connect__handle" href="https://www.instagram.com/demianqz_/" target="_blank" rel="noopener noreferrer">
+      @demianqz_
+    </a>
+  </div>
+</section>
+
+<!-- ============ PAPAN NILAI ============ -->
+<section class="scores" id="scores">
+  <div class="scores__inner">
+    <div class="scores__head">
+      <div class="eyebrow eyebrow--center">Papan Nilai</div>
+      <h2>Daftar <em>Nilai Peserta</em></h2>
+      <p id="scoresCount">Memuat data…</p>
+    </div>
+    <div class="scores__grid" id="scoresGrid"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <strong>Kirmago</strong> &nbsp;—&nbsp; Photography Contest &nbsp;—&nbsp; MMXXV
+</footer>
+
+<script>
+/* ============================================================
+   KONFIGURASI FOTO — EDIT DI SINI
+   ============================================================
+   CARA AMBIL FILE_ID:
+   1. Buka foto di Drive → klik kanan → Share → Copy link
+   2. Link: https://drive.google.com/file/d/XXXXXX/view?usp=sharing
+   3. Bagian XXXXXX adalah FILE_ID
+
+   CEK CEPAT: buka di browser:
+   https://drive.google.com/thumbnail?id=FILE_ID&sz=w1600
+   Kalau foto muncul → benar. Kalau blank → salah/private.
+   ============================================================ */
+
+var CONFIG = {
+
+  /* ---------- FOTO 4 PEMENANG ---------- */
+  winners: {
+    juara1:  { fileId: '1uRES7-1jUp_c5fKPz1BBPP5cFr-I0KGv', name: 'Irene Althafunnida', grade: 'S+' },
+    juara2:  { fileId: '1PHR1WzxDUViS4N6XCPurAi8HJDfp26jV', name: 'Najma Asyfa',         grade: 'A'  },
+    juara3:  { fileId: '1334-q2mpkVkw9Lj13e06acTOW1bjA7nC', name: 'Selvi Ainur Rizma',  grade: 'A-' },
+    favorit: { fileId: '1ViHylm8M96a33KJueLLRmc-vNPkGOI0G', name: 'Ursila Maulida',     grade: 'A-' }
+  },
+
+  /* ---------- FOTO WALL (semua foto) ----------
+     Tambahkan file ID foto peserta lain di array ini. */
+  photoWall: [
+    '1uRES7-1jUp_c5fKPz1BBPP5cFr-I0KGv',
+    '1PHR1WzxDUViS4N6XCPurAi8HJDfp26jV',
+    '1334-q2mpkVkw9Lj13e06acTOW1bjA7nC',
+    '1ViHylm8M96a33KJueLLRmc-vNPkGOI0G'
+
+    /* Tambahkan ID foto lain di sini, contoh:
+    ,'FILE_ID_1'
+    ,'FILE_ID_2'
+    */
+  ],
+
+  /* ---------- HERO BACKGROUND ---------- */
+  heroBgId: '1uRES7-1jUp_c5fKPz1BBPP5cFr-I0KGv'
+};
+
+/* ============================================================
+   DATA NILAI PESERTA
+   ============================================================ */
+var SCORES = [
+  { name: 'Irene Althafunnida', grade: 'S+', badge: 'Juara 1' },
+  { name: 'Najma Asyfa',        grade: 'A',  badge: 'Juara 2' },
+  { name: 'Selvi Ainur Rizma',  grade: 'A-', badge: 'Juara 3' },
+  { name: 'Ursila Maulida',     grade: 'A-', badge: 'Favorit' },
+  { name: 'Aira Alfina',     grade: 'C'  },
+  { name: 'Ajeng Setia',     grade: 'C+' },
+  { name: 'Alifah Najwa',    grade: 'C'  },
+  { name: 'Annafs',          grade: 'C+' },
+  { name: 'Aura Silvia',     grade: 'B-' },
+  { name: 'Aurelio',         grade: 'C'  },
+  { name: 'Bintang',         grade: 'B+' },
+  { name: 'Calista Mahe',    grade: 'D'  },
+  { name: 'Casey An',        grade: 'C-' },
+  { name: 'Chandra',         grade: 'C+' },
+  { name: 'Clara Vi',        grade: 'B'  },
+  { name: 'Dania',           grade: 'D'  },
+  { name: 'Dena Aninda',     grade: 'C+' },
+  { name: 'Elvira Dwi',      grade: 'B+' },
+  { name: 'Faizah Zai',      grade: 'B'  },
+  { name: 'Fikri Adi',       grade: 'C-' },
+  { name: 'Firda',           grade: 'B'  },
+  { name: 'Gendis Wilujeng', grade: 'C'  },
+  { name: 'Ghania N',        grade: 'B+' },
+  { name: 'Gracella',        grade: 'C+' },
+  { name: 'HilwatulF',       grade: 'D'  },
+  { name: 'Hirzul Fa',       grade: 'D-' },
+  { name: 'Kaila Marva',     grade: 'B'  },
+  { name: 'Khanza F',        grade: 'B-' },
+  { name: 'Kharera',         grade: 'C-' },
+  { name: 'Lintang Najwa',   grade: 'B+' },
+  { name: 'Masayu',          grade: 'C+' },
+  { name: 'Nadira Zulfatur', grade: 'B-' },
+  { name: 'Najwa Helmi',     grade: 'B'  },
+  { name: 'Nayla Sa',        grade: 'B-' },
+  { name: 'Ni Made',         grade: 'B'  },
+  { name: 'Oceanic',         grade: 'D-' },
+  { name: 'Octavia',         grade: 'B-' },
+  { name: 'Putri',           grade: 'B+' },
+  { name: 'Rachmad',         grade: 'B+' },
+  { name: 'Rania Ur',        grade: 'C-' },
+  { name: 'Reffy Anugra',    grade: 'C'  },
+  { name: 'Safa Elys',       grade: 'B+' },
+  { name: 'Safara A',        grade: 'C+' },
+  { name: 'Sandrina',        grade: 'C-' },
+  { name: 'Shyifa Imr',      grade: 'B-' },
+  { name: 'Suryani W',       grade: 'C'  },
+  { name: 'Unyike Lintag',   grade: 'C+' },
+  { name: 'Yuliyana',        grade: 'B+' },
+  { name: 'Zahra Dify',      grade: 'D'  },
+  { name: 'Marizka',         grade: 'C+' },
+  { name: 'Hilwa',           grade: 'B+' }
+];
+
+/* ============================================================
+   HELPER
+   ============================================================ */
+(function () {
+  'use strict';
+
+  function driveUrl(fileId, size) {
+    size = size || 'w1600';
+    return 'https://drive.google.com/thumbnail?id=' + fileId + '&sz=' + size;
+  }
+
+  function $(s) { return document.querySelector(s); }
+
+  function setImg(el, fileId, size) {
+    if (!el || !fileId) return;
+    el.src = driveUrl(fileId, size);
+  }
+
+  /* ---------- ISI FOTO PEMENANG ---------- */
+  var W = CONFIG.winners;
+
+  setImg($('#imgJuara1'), W.juara1.fileId, 'w2000');
+  setImg($('#imgJuara2'), W.juara2.fileId, 'w2000');
+  setImg($('#imgJuara3'), W.juara3.fileId, 'w2000');
+  setImg($('#imgFavorit'), W.favorit.fileId, 'w2000');
+
+  setImg($('#recapImg1'), W.juara1.fileId, 'w1200');
+  setImg($('#recapImg2'), W.juara2.fileId, 'w1200');
+  setImg($('#recapImg3'), W.juara3.fileId, 'w1200');
+  setImg($('#recapImgFav'), W.favorit.fileId, 'w1200');
+
+  setImg($('#heroBg'), CONFIG.heroBgId, 'w2000');
+
+  $('#nameJuara1').textContent = W.juara1.name;
+  $('#nameJuara2').textContent = W.juara2.name;
+  $('#nameJuara3').textContent = W.juara3.name;
+  $('#nameFavorit').textContent = W.favorit.name;
+
+  $('#gradeJuara1').textContent = W.juara1.grade;
+  $('#gradeJuara2').textContent = W.juara2.grade;
+  $('#gradeJuara3').textContent = W.juara3.grade;
+  $('#gradeFavorit').textContent = W.favorit.grade;
+
+  $('#recapName1').textContent = W.juara1.name;
+  $('#recapName2').textContent = W.juara2.name;
+  $('#recapName3').textContent = W.juara3.name;
+  $('#recapNameFav').textContent = W.favorit.name;
+
+  /* ---------- BUILD PHOTO WALL ---------- */
+  (function buildPhotoWall() {
+    var ids = CONFIG.photoWall || [];
+    if (!ids.length) return;
+
+    function makeRowHtml() {
+      var html = '';
+      for (var i = 0; i < ids.length; i++) {
+        var url = driveUrl(ids[i], 'w800');
+        html += '<div class="photo-wall__item">'
+              + '<img src="' + url + '" alt="" loading="lazy" data-fallback>'
+              + '</div>';
+      }
+      return html;
+    }
+
+    var rowHtml = makeRowHtml() + makeRowHtml();
+
+    var row1 = $('#row1');
+    var row2 = $('#row2');
+    var row3 = $('#row3');
+
+    if (row1) row1.innerHTML = rowHtml;
+    if (row2) row2.innerHTML = rowHtml;
+    if (row3) row3.innerHTML = rowHtml;
+  })();
+
+  /* ---------- BUILD SCORES ---------- */
+  (function buildScores() {
+    var grid = $('#scoresGrid');
+    if (!grid) return;
+
+    var countEl = $('#scoresCount');
+    if (countEl) countEl.textContent = SCORES.length + ' peserta — hasil penilaian juri';
+
+    function gradeClass(g) {
+      var first = String(g).charAt(0);
+      if (first === 'S') return 'grade-s';
+      if (first === 'A') return 'grade-a';
+      if (first === 'B') return 'grade-b';
+      if (first === 'C') return 'grade-c';
+      return 'grade-d';
+    }
+
+    function pad(n) {
+      return n < 10 ? '0' + n : '' + n;
+    }
+
+    var html = '';
+    for (var i = 0; i < SCORES.length; i++) {
+      var s = SCORES[i];
+      var isWinner = !!s.badge;
+      var badge = s.badge
+        ? ' <span class="score-item__badge">' + s.badge + '</span>'
+        : '';
+      html += '<div class="score-item' + (isWinner ? ' score-item--winner' : '') + '">'
+            + '<span class="score-item__rank">' + pad(i + 1) + '</span>'
+            + '<span class="score-item__name">' + s.name + badge + '</span>'
+            + '<span class="score-item__grade ' + gradeClass(s.grade) + '">' + s.grade + '</span>'
+            + '</div>';
+    }
+    grid.innerHTML = html;
+  })();
+
+  /* ---------- IMAGE FALLBACK ---------- */
+  (function imageFallback() {
+    var imgs = document.querySelectorAll('img[data-fallback]');
+    Array.prototype.forEach.call(imgs, function (img) {
+      img.addEventListener('error', function () {
+        var parent = img.parentNode;
+        if (!parent) return;
+        if (parent.querySelector('.img-fallback')) return;
+        var fb = document.createElement('div');
+        fb.className = 'img-fallback';
+        fb.textContent = 'Foto belum tersedia';
+        parent.appendChild(fb);
+        img.style.display = 'none';
+      }, { once: true });
+    });
+  })();
+
+  /* ---------- GRAIN ---------- */
+ _img"><img id="recapImg3" src="" alt="Juara 3" data-fallback></div>
         <div class="recap__rank">Juara 3</div>
         <div class="recap__name" id="recapName3">Selvi Ain</div>
         <div class="recap__title">Nilai A-</div>
