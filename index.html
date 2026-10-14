@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KIRMAGO PHOTOGRAPHY CONTEST — Winner Announcement</title>
+<title>KIRMAGO PHOTOGRAPHY CONTEST - Winner Announcement</title>
 <meta name="description" content="Pengumuman pemenang KIRMAGO Photography Contest.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,8 @@
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--ink);color:var(--bone);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-body.is-locked{overflow:hidden;height:100vh}
+body.is-locked{overflow:hidden;height:100vh;animation:unlockBody 0s linear 4s forwards}
+@keyframes unlockBody{to{overflow:auto;height:auto}}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--gold);color:var(--ink)}
@@ -39,8 +40,23 @@ a{color:inherit;text-decoration:none}
 .cursor.grow{width:80px;height:80px;margin:-40px 0 0 -40px;background:rgba(200,162,74,.08);border-color:rgba(200,162,74,.9)}
 @media(pointer:fine){body.has-cursor .cursor,body.has-cursor .cursor-dot{opacity:1}}
 
-.preloader{position:fixed;inset:0;z-index:9500;background:var(--ink);display:flex;align-items:center;justify-content:center;transition:transform 1.2s var(--ease) .25s,opacity .6s ease .9s}
-.preloader.done{transform:translateY(-101%);opacity:0}
+/* ============ PRELOADER + FAILSAFE ============ */
+.preloader{
+  position:fixed;inset:0;z-index:9500;
+  background:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform 1.2s var(--ease) .25s,opacity .6s ease .9s,visibility 0s linear 1.2s;
+  animation:preFailsafe 0s linear 4s forwards;
+}
+@keyframes preFailsafe{
+  to{transform:translateY(-101%);opacity:0;visibility:hidden;pointer-events:none}
+}
+.preloader.done{
+  transform:translateY(-101%);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
 .preloader::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(200,162,74,.06),transparent 60%);pointer-events:none}
 .pre__inner{width:min(440px,78vw);text-align:center;position:relative;transition:opacity .5s ease,transform .8s var(--ease)}
 .preloader.done .pre__inner{opacity:0;transform:translateY(-18px)}
@@ -50,6 +66,9 @@ a{color:inherit;text-decoration:none}
 .pre__bar{margin-top:34px;height:1px;background:rgba(239,233,223,.12);position:relative;overflow:hidden}
 .pre__bar-fill{position:absolute;inset:0 100% 0 0;background:linear-gradient(90deg,var(--gold-dim),var(--gold));transition:right .35s var(--ease)}
 .pre__caption{margin-top:20px;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--bone-mid)}
+
+/* ============ NOSCRIPT FAILSAFE ============ */
+.noscript-fallback{display:none}
 
 .nav{position:fixed;top:0;left:0;right:0;z-index:600;display:flex;align-items:center;justify-content:space-between;padding:26px clamp(20px,5vw,64px);mix-blend-mode:difference;opacity:0;transform:translateY(-14px);transition:opacity 1s ease .3s,transform 1s var(--ease) .3s;pointer-events:none}
 body.loaded .nav{opacity:1;transform:none;pointer-events:auto}
@@ -106,6 +125,127 @@ body.loaded .hero__scroll{animation:fadeUp 1.2s var(--ease) 1.8s forwards}
 .mf-item p{font-family:var(--serif);font-size:19px;color:var(--bone);letter-spacing:.02em;line-height:1.4}
 
 [data-reveal]{opacity:0;transform:translateY(38px);transition:opacity 1.15s var(--ease),transform 1.15s var(--ease);will-change:opacity,transform}
+[data-reveal].is-in{opacity:1;transform:none}
+[data-reveal][data-delay="1"]{transition-delay:.12s}
+[data-reveal][data-delay="2"]{transition-delay:.24s}
+[data-reveal][data-delay="3"]{transition-delay:.36s}
+[data-reveal][data-delay="4"]{transition-delay:.48s}
+
+.gate{position:relative;text-align:center;padding:clamp(80px,13vh,160px) 6vw;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 50% 50%,rgba(200,162,74,.055),transparent 62%),var(--ink-2);overflow:hidden}
+.gate__title{font-family:var(--serif);font-weight:300;font-size:clamp(30px,5.6vw,74px);line-height:1.1;letter-spacing:-.015em;margin-bottom:20px}
+.gate__title em{font-style:italic;color:var(--gold)}
+.gate__desc{max-width:520px;margin:0 auto 48px;color:var(--bone-dim);font-size:14.5px;line-height:1.85;letter-spacing:.02em}
+
+.btn{position:relative;display:inline-flex;align-items:center;gap:18px;padding:22px 46px;border:1px solid rgba(200,162,74,.42);background:transparent;color:var(--bone);font-family:var(--sans);font-size:11px;letter-spacing:.42em;text-transform:uppercase;cursor:pointer;overflow:hidden;transition:color .6s var(--ease),border-color .6s var(--ease)}
+.btn::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .7s var(--ease);z-index:-1}
+.btn:hover{color:var(--ink);border-color:var(--gold)}
+.btn:hover::before{transform:translateY(0)}
+.btn__dot{width:6px;height:6px;border-radius:50%;background:var(--gold);transition:background .6s var(--ease);animation:pulseDot 2.2s ease-in-out infinite}
+.btn:hover .btn__dot{background:var(--ink);animation:none}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+
+.winners{position:relative;background:var(--ink);padding-top:clamp(70px,11vh,150px)}
+.winners__head{text-align:center;margin-bottom:clamp(70px,11vh,150px)}
+.winners__head h2{font-family:var(--serif);font-weight:300;font-size:clamp(38px,7.5vw,104px);line-height:.98;letter-spacing:-.02em}
+.winners__head h2 em{font-style:italic;color:var(--gold)}
+.winner{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(34px,6vw,96px);align-items:center;margin-bottom:clamp(90px,15vh,200px)}
+.winner:last-of-type{margin-bottom:0}
+.winner--flip .winner__media{order:2}
+.winner--flip .winner__body{order:1}
+.winner__media{position:relative}
+.frame{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--ink-3);clip-path:inset(0 0 100% 0);transition:clip-path 1.5s var(--ease);will-change:clip-path}
+.is-in .frame{clip-path:inset(0 0 0 0)}
+.frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.55),transparent 45%);opacity:0;transition:opacity 1s ease .8s;pointer-events:none}
+.is-in .frame::after{opacity:1}
+.frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.42);filter:grayscale(.55) contrast(1.05);transition:transform 2.6s var(--ease),filter 1.4s ease;will-change:transform}
+.is-in .frame img{transform:scale(1.02)}
+.frame:hover img{transform:scale(1.08);filter:grayscale(0) contrast(1.08)}
+.winner__rank-badge{position:absolute;top:0;left:0;z-index:4;padding:16px 24px;background:var(--gold);color:var(--ink);font-size:10px;letter-spacing:.36em;text-transform:uppercase;font-weight:500;transform:translateY(-100%);transition:transform 1s var(--ease) .55s}
+.is-in .winner__rank-badge{transform:translateY(0)}
+.winner__ghost{position:absolute;right:-.06em;bottom:-.28em;z-index:3;font-family:var(--serif);font-size:clamp(110px,18vw,250px);line-height:.7;font-weight:400;color:transparent;-webkit-text-stroke:1px rgba(239,233,223,.16);pointer-events:none;user-select:none;opacity:0;transform:translateY(30px);transition:opacity 1.3s var(--ease) .4s,transform 1.3s var(--ease) .4s}
+.is-in .winner__ghost{opacity:1;transform:none}
+.winner__body{position:relative}
+.winner__rank{display:inline-flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.winner__rank::before{content:'';width:30px;height:1px;background:var(--gold-dim)}
+.winner__name{font-family:var(--serif);font-weight:300;font-size:clamp(32px,4.8vw,64px);line-height:1.02;letter-spacing:-.015em;margin-bottom:14px}
+.winner__title{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.1vw,26px);color:var(--gold);letter-spacing:.02em;margin-bottom:28px}
+.winner__desc{color:var(--bone-dim);font-size:14.5px;line-height:1.9;max-width:46ch;letter-spacing:.015em}
+@media(max-width:900px){
+  .winner{grid-template-columns:1fr;gap:34px}
+  .winner--flip .winner__media{order:0}
+  .winner--flip .winner__body{order:0}
+  .winner__ghost{font-size:clamp(90px,26vw,160px);bottom:-.2em}
+}
+
+.honors{background:var(--ink-2);border-top:1px solid var(--line)}
+.honors__head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:clamp(46px,7vh,80px)}
+.honors__head h3{font-family:var(--serif);font-weight:300;font-size:clamp(28px,4.6vw,58px);line-height:1.04;letter-spacing:-.015em;max-width:15ch}
+.honors__head p{color:var(--bone-mid);font-size:13px;max-width:34ch;letter-spacing:.02em;line-height:1.85}
+.honors__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:clamp(16px,2.4vw,30px)}
+.honor{position:relative;cursor:pointer}
+.honor__frame{position:relative;overflow:hidden;aspect-ratio:3/4;background:var(--ink-3);clip-path:inset(0 0 100% 0);transition:clip-path 1.15s var(--ease)}
+.honor.is-in .honor__frame{clip-path:inset(0 0 0 0)}
+.honor__frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(.85) brightness(.72);transform:scale(1.06);transition:transform 1.4s var(--ease),filter .9s ease}
+.honor:hover .honor__frame img{transform:scale(1.14);filter:grayscale(0) brightness(.95)}
+.honor__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.94) 0%,rgba(10,9,8,.15) 46%,transparent 70%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;opacity:0;transition:opacity .7s var(--ease)}
+.honor:hover .honor__overlay{opacity:1}
+.honor__overlay strong{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--bone);letter-spacing:.01em;line-height:1.25}
+.honor__label{margin-top:14px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.honor__label span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--bone-mid)}
+.honor__label em{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--bone-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.closing{position:relative;text-align:center;padding:clamp(110px,18vh,220px) 6vw clamp(60px,9vh,110px);background:var(--ink);border-top:1px solid var(--line);overflow:hidden}
+.closing::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(900px,90vw);height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
+.closing__title{font-family:var(--serif);font-weight:300;font-size:clamp(30px,6.4vw,86px);line-height:1.04;letter-spacing:-.02em;margin-bottom:26px}
+.closing__title em{font-style:italic;color:var(--gold)}
+.closing__text{max-width:540px;margin:0 auto;color:var(--bone-dim);font-size:14.5px;line-height:1.95;letter-spacing:.015em}
+.footer{margin-top:clamp(80px,12vh,140px);padding-top:34px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;text-align:left}
+.footer__brand{font-size:11px;letter-spacing:.46em;text-transform:uppercase;color:var(--bone)}
+.footer__note{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--bone-mid)}
+.footer__year{font-family:var(--serif);font-size:15px;color:var(--bone-dim);letter-spacing:.1em}
+@media(max-width:600px){.footer{justify-content:center;text-align:center}}
+
+.progress{position:fixed;top:0;left:0;height:1px;background:linear-gradient(90deg,var(--gold-dim),var(--gold));z-index:800;width:0%;transition:width .12s linear;box-shadow:0 0 12px rgba(200,162,74,.5)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  [data-reveal]{opacity:1;transform:none}
+  .frame,.honor__frame{clip-path:none !important}
+  .frame img{transform:none !important}
+  .grain{display:none}
+}
+</style>
+
+<noscript>
+<style>
+  .preloader{display:none !important}
+  body.is-locked{overflow:auto !important;height:auto !important}
+  [data-reveal]{opacity:1 !important;transform:none !important}
+  .frame,.honor__frame{clip-path:none !important}
+  .frame img{transform:none !important}
+</style>
+</noscript>
+</head>
+
+<body class="is-locked">
+
+<div class="progress" id="progress"></div>
+<div class="vignette"></div>
+<div class="grain"><canvas id="grainCanvas"></canvas></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<div class="preloader" id="preloader">
+  <div class="pre__inner">
+    <div class="pre__mark">Kirmago Workshop</div>
+    <div class="pre__count"><span id="preCount">00</span><sup>%</sup></div>
+    <div class="pre__bar"><div class="pre__bar-fill" id="preBar"></div></div>
+    <div class="pre__caption" id="preCaption">Menyiapkan cahaya...</div>
+  </div>
+</div>
+
+<nav class="nav">
+  <a href="#top" class="nav__br8px);transition:opacity 1.15s var(--ease),transform 1.15s var(--ease);will-change:opacity,transform}
 [data-reveal].is-in{opacity:1;transform:none}
 [data-reveal][data-delay="1"]{transition-delay:.12s}
 [data-reveal][data-delay="2"]{transition-delay:.24s}
