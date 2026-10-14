@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KIRMAGO Photography Contest - Winner Announcement</title>
+<title>KIRMAGO Photography Contest — Winner Announcement</title>
 <meta name="description" content="Pengumuman pemenang KIRMAGO Photography Contest.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,15 +16,16 @@
 <div class="vignette"></div>
 <div class="grain"><canvas id="grainCanvas"></canvas></div>
 
+<!-- ============ NAV ============ -->
 <nav class="nav">
   <span class="nav__brand">Kirmago</span>
   <span class="nav__year">MMXXV</span>
 </nav>
 
 <!-- ============ HERO ============ -->
-<header class="hero">
+<header class="hero" id="hero">
   <div class="hero__bg">
-    <img src="https://drive.google.com/thumbnail?id=1L6PVEJZox7fPz5LNBftb06TmHbTrPHZg&sz=w2000" alt="">
+    <img id="heroBg" src="" alt="" data-fallback>
   </div>
   <div class="hero__content">
     <div class="hero__kicker">Winner Announcement</div>
@@ -32,10 +33,14 @@
       <span>K</span><span>I</span><span>R</span><span>M</span><span>A</span><span>G</span><span>O</span>
     </h1>
     <p class="hero__sub">Photography Contest</p>
-    <button class="hero__cta" id="startBtn">
+    <button class="hero__cta" id="startBtn" type="button">
       <span class="hero__cta-dot"></span>
       Mulai Pengumuman
     </button>
+  </div>
+  <div class="hero__scroll">
+    <span>Gulir</span>
+    <div class="hero__scroll-line"></div>
   </div>
 </header>
 
@@ -44,436 +49,590 @@
   <div class="photo-wall__head">
     <div class="eyebrow">Photo Wall</div>
     <h2>Setiap bingkai<br><em>adalah cerita.</em></h2>
+    <p class="photo-wall__sub">Karya-karya yang masuk ke dalam kurasi KIRMAGO Photography Contest.</p>
   </div>
-  <div class="photo-wall__track" id="photoWallTrack">
-    <!-- Foto di-generate otomatis dari array PHOTOS di script bawah -->
+
+  <div class="photo-wall__rows">
+    <div class="photo-wall__row photo-wall__row--left" id="row1"></div>
+    <div class="photo-wall__row photo-wall__row--right" id="row2"></div>
+    <div class="photo-wall__row photo-wall__row--left photo-wall__row--slow" id="row3"></div>
+  </div>
+
+  <div class="photo-wall__cta">
+    <button class="hero__cta" id="continueBtn" type="button">
+      <span class="hero__cta-dot"></span>
+      Lihat Para Pemenang
+    </button>
   </div>
 </section>
 
 <!-- ============ JUARA 3 ============ -->
 <section class="reveal-section" id="juara-3">
-  <article class="winner" data-winner>
-    <div class="winner__media">
-      <div class="winner__frame">
-        <img src="https://drive.google.com/thumbnail?id=1J3Cb-ECMah8XgpnuPPrApyrL0pcskudR&sz=w2000" alt="Karya Juara 3">
+  <div class="reveal-section__inner">
+    <div class="eyebrow eyebrow--center">Juara 3</div>
+    <article class="winner" data-winner>
+      <div class="winner__media">
+        <div class="winner__frame">
+          <img id="imgJuara3" src="" alt="Karya Juara 3" data-fallback>
+        </div>
+        <div class="winner__badge">Juara 3</div>
+        <div class="winner__ghost">03</div>
       </div>
-      <div class="winner__badge">Juara 3</div>
-      <div class="winner__ghost">03</div>
-    </div>
-    <div class="winner__body">
-      <div class="winner__rank">Peringkat Ketiga</div>
-      <h2 class="winner__name">Selvi Ain</h2>
-      <p class="winner__title">Nilai A-</p>
-      <p class="winner__desc">
-        Cerita foto juara 3 belum diisi. Silakan isi bagian ini dengan narasi karya,
-        momen di balik bingkai, atau pesan yang ingin disampaikan oleh fotografer.
-      </p>
-    </div>
-  </article>
+      <div class="winner__body">
+        <div class="winner__rank">Peringkat Ketiga</div>
+        <h2 class="winner__name" id="nameJuara3">Selvi Ain</h2>
+        <p class="winner__title">Nilai <span class="winner__grade" id="gradeJuara3">A-</span></p>
+        <h3 class="winner__story-title">"Manusia dan Lingkungan"</h3>
+        <p class="winner__desc">
+          Dari foto ini, kita dapat melihat hubungan antara manusia dan lingkungan.
+          Kelompok siswa berada di depan bangunan sekolah dengan mengenakan pakaian
+          seragam berwarna putih. Di sekitar mereka, terdapat tanaman hijau, bunga
+          berwarna cerah, pepohonan, serta bangunan yang menjadi bagian dari
+          lingkungan sekolah.
+        </p>
+        <p class="winner__desc">
+          Kehadiran tanaman memberikan kesan asri di tengah aktivitas manusia.
+          Namun, kendaraan bermotor dan permukaan jalan juga menunjukkan bahwa
+          lingkungan terus digunakan untuk memenuhi kebutuhan manusia.
+        </p>
+        <p class="winner__desc">
+          Foto ini mengingatkan kita bahwa manusia dan lingkungan saling berkaitan.
+          Oleh karena itu, menjaga kebersihan, merawat tanaman, dan melestarikan
+          lingkungan merupakan tanggung jawab bersama demi masa depan.
+        </p>
+      </div>
+    </article>
+  </div>
 </section>
 
 <!-- ============ JUARA 2 ============ -->
 <section class="reveal-section reveal-section--alt" id="juara-2">
-  <article class="winner winner--flip" data-winner>
-    <div class="winner__media">
-      <div class="winner__frame">
-        <img src="https://drive.google.com/thumbnail?id=1uRES7-1jUp_c5fKPz1BBPP5cFr-I0KGv&sz=w2000" alt="Karya Juara 2">
+  <div class="reveal-section__inner">
+    <div class="eyebrow eyebrow--center">Juara 2</div>
+    <article class="winner winner--flip" data-winner>
+      <div class="winner__media">
+        <div class="winner__frame">
+          <img id="imgJuara2" src="" alt="Karya Juara 2" data-fallback>
+        </div>
+        <div class="winner__badge">Juara 2</div>
+        <div class="winner__ghost">02</div>
       </div>
-      <div class="winner__badge">Juara 2</div>
-      <div class="winner__ghost">02</div>
-    </div>
-    <div class="winner__body">
-      <div class="winner__rank">Runner Up</div>
-      <h2 class="winner__name">Najma Asyfa</h2>
-      <p class="winner__title">Nilai A</p>
-      <p class="winner__desc">
-        Cerita foto juara 2 belum diisi. Silakan isi bagian ini dengan narasi karya,
-        momen di balik bingkai, atau pesan yang ingin disampaikan oleh fotografer.
-      </p>
-    </div>
-  </article>
+      <div class="winner__body">
+        <div class="winner__rank">Runner Up</div>
+        <h2 class="winner__name" id="nameJuara2">Najma Asyfa</h2>
+        <p class="winner__title">Nilai <span class="winner__grade" id="gradeJuara2">A</span></p>
+        <h3 class="winner__story-title">"Jejak Budaya, Cahaya Harapan"</h3>
+        <p class="winner__desc">
+          Melihat foto ini, tercipta suasana sunyi yang seolah memisahkan kita
+          dari kebisingan dunia luar. Walaupun tidak tampak sosok manusia di
+          dalam bingkai, kehadiran sang perawat budaya terasa begitu kuat
+          melalui penataan ruangan yang tersusun sangat rapi.
+        </p>
+        <p class="winner__desc">
+          Kursi kosong yang menghadap ke depan seakan-akan mengajak siapa saja
+          untuk duduk sejenak, melepas lelah, sambil mengapresiasi keindahan
+          berbagai ornamen tradisional di dalam etalase.
+        </p>
+        <p class="winner__desc">
+          Sementara itu, pendar cahaya terang yang menerobos masuk dari arah
+          jendela melambangkan sebuah harapan yang senantiasa hidup: nilai-nilai
+          luhur dan kekayaan budaya bangsa akan terus terjaga serta bersinar di
+          tengah pesatnya arus modernisasi. Budaya tidak harus punah oleh
+          perubahan zaman, tetapi dapat terus dijaga dan dikembangkan.
+        </p>
+      </div>
+    </article>
+  </div>
 </section>
 
 <!-- ============ JUARA 1 ============ -->
-<section class="reveal-section" id="juara-1">
-  <article class="winner" data-winner>
-    <div class="winner__media">
-      <div class="winner__frame">
-        <img src="https://drive.google.com/thumbnail?id=1L6PVEJZox7fPz5LNBftb06TmHbTrPHZg&sz=w2000" alt="Karya Juara 1">
+<section class="reveal-section reveal-section--grand" id="juara-1">
+  <div class="reveal-section__inner">
+    <div class="eyebrow eyebrow--center">Juara 1</div>
+    <article class="winner winner--grand" data-winner>
+      <div class="winner__media">
+        <div class="winner__frame winner__frame--grand">
+          <img id="imgJuara1" src="" alt="Karya Juara 1" data-fallback>
+        </div>
+        <div class="winner__badge winner__badge--grand">Juara 1</div>
+        <div class="winner__ghost winner__ghost--grand">01</div>
       </div>
-      <div class="winner__badge">Juara 1</div>
-      <div class="winner__ghost">01</div>
-    </div>
-    <div class="winner__body">
-      <div class="winner__rank">Pemenang Utama</div>
-      <h2 class="winner__name">Irene Alth</h2>
-      <p class="winner__title">Nilai S+</p>
-      <p class="winner__desc">
-        Cerita foto juara 1 belum diisi. Silakan isi bagian ini dengan narasi karya,
-        momen di balik bingkai, atau pesan yang ingin disampaikan oleh fotografer.
-      </p>
-    </div>
-  </article>
+      <div class="winner__body">
+        <div class="winner__rank winner__rank--grand">Pemenang Utama</div>
+        <h2 class="winner__name winner__name--grand" id="nameJuara1">Irene Alth</h2>
+        <p class="winner__title">Nilai <span class="winner__grade" id="gradeJuara1">S+</span></p>
+        <h3 class="winner__story-title">"Merawat Kehidupan"</h3>
+        <p class="winner__desc">
+          "Rawat aku, rawat aku," begitu kira-kira suara tanaman dalam candaan
+          seorang bapak yang sedang merawatnya. Di balik candanya yang sederhana,
+          tersimpan makna mendalam: setiap proses kehidupan membutuhkan perhatian
+          dan kesabaran untuk terus tumbuh.
+        </p>
+        <p class="winner__desc">
+          Merawat bukan sekadar menanam dan menunggu hasil, melainkan tentang
+          ketekunan menjaga kehidupan, bahkan ketika hasilnya belum terlihat.
+        </p>
+        <p class="winner__desc">
+          Tanaman memang tak bisa berbicara. Namun, dari tangan yang merawatnya,
+          kita belajar bahwa setiap kehidupan layak mendapatkan waktu, perhatian,
+          dan kesempatan untuk tumbuh.
+        </p>
+        <p class="winner__desc">
+          Sebab, kepedulian tidak selalu hadir melalui kata-kata besar, tetapi
+          juga melalui tindakan sederhana yang menjaga kehidupan tetap tumbuh
+          dan menghadirkan kehangatan antara sesama makhluk ciptaan Tuhan
+          melalui interaksinya.
+        </p>
+      </div>
+    </article>
+  </div>
 </section>
 
-<!-- ============ PAPAN SKOR ============ -->
-<section class="scores" id="scores">
-  <div class="scores__head">
-    <div class="eyebrow">Papan Skor</div>
-    <h2>Daftar <em>Nilai</em></h2>
-    <p>51 peserta &mdash; hasil penilaian juri</p>
-  </div>
-  <div class="scores__grid" id="scoresGrid">
-    <!-- Di-generate otomatis dari array SCORES di script bawah -->
+<!-- ============ JUARA FAVORIT ============ -->
+<section class="reveal-section reveal-section--alt" id="juara-favorit">
+  <div class="reveal-section__inner">
+    <div class="eyebrow eyebrow--center">Juara Favorit</div>
+    <article class="winner winner--flip" data-winner>
+      <div class="winner__media">
+        <div class="winner__frame">
+          <img id="imgFavorit" src="" alt="Karya Juara Favorit" data-fallback>
+        </div>
+        <div class="winner__badge winner__badge--fav">Favorit</div>
+        <div class="winner__ghost">★</div>
+      </div>
+      <div class="winner__body">
+        <div class="winner__rank">Pilihan Favorit</div>
+        <h2 class="winner__name" id="nameFavorit">Ursila Maulida</h2>
+        <p class="winner__title">Nilai <span class="winner__grade" id="gradeFavorit">A-</span></p>
+        <h3 class="winner__story-title">"Karya Pilihan Favorit"</h3>
+        <p class="winner__desc">
+          Karya Ursila Maulida terpilih sebagai Juara Favorit. Cerita lengkap
+          di balik karya ini masih dalam proses konfirmasi bersama fotografer.
+        </p>
+        <p class="winner__desc">
+          <em>Catatan: bagian cerita ini dapat diedit langsung pada file
+          <code>index.html</code> setelah narasi resmi diterima.</em>
+        </p>
+      </div>
+    </article>
   </div>
 </section>
 
 <!-- ============ RECAP ============ -->
 <section class="recap" id="recap">
-  <div class="recap__head">
-    <div class="eyebrow">Recap</div>
-    <h2 class="section-title">Tiga <em>karya terpilih.</em></h2>
+  <div class="recap__inner">
+    <div class="eyebrow eyebrow--center">Recap</div>
+    <h2 class="section-title">Empat <em>karya terpilih.</em></h2>
+    <p class="recap__sub">Perjalanan panjang yang berakhir pada empat bingkai ini.</p>
+
+    <div class="recap__grid">
+      <div class="recap__item" data-reveal>
+        <div class="recap__img"><img id="recapImg3" src="" alt="Juara 3" data-fallback></div>
+        <div class="recap__rank">Juara 3</div>
+        <div class="recap__name" id="recapName3">Selvi Ain</div>
+        <div class="recap__title">Nilai A-</div>
+      </div>
+
+      <div class="recap__item" data-reveal>
+        <div class="recap__img"><img id="recapImg2" src="" alt="Juara 2" data-fallback></div>
+        <div class="recap__rank">Juara 2</div>
+        <div class="recap__name" id="recapName2">Najma Asyfa</div>
+        <div class="recap__title">Nilai A</div>
+      </div>
+
+      <div class="recap__item" data-reveal>
+        <div class="recap__img"><img id="recapImg1" src="" alt="Juara 1" data-fallback></div>
+        <div class="recap__rank">Juara 1</div>
+        <div class="recap__name" id="recapName1">Irene Alth</div>
+        <div class="recap__title">Nilai S+</div>
+      </div>
+
+      <div class="recap__item" data-reveal>
+        <div class="recap__img"><img id="recapImgFav" src="" alt="Juara Favorit" data-fallback></div>
+        <div class="recap__rank">Favorit</div>
+        <div class="recap__name" id="recapNameFav">Ursila Maulida</div>
+        <div class="recap__title">Nilai A-</div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="recap__grid">
-    <div class="recap__item" data-reveal>
-      <div class="recap__img">
-        <img src="https://drive.google.com/thumbnail?id=1J3Cb-ECMah8XgpnuPPrApyrL0pcskudR&sz=w1200" alt="Juara 3">
-      </div>
-      <div class="recap__rank">Juara 3</div>
-      <div class="recap__name">Selvi Ain</div>
-      <div class="recap__title">Nilai A-</div>
-    </div>
-
-    <div class="recap__item" data-reveal>
-      <div class="recap__img">
-        <img src="https://drive.google.com/thumbnail?id=1uRES7-1jUp_c5fKPz1BBPP5cFr-I0KGv&sz=w1200" alt="Juara 2">
-      </div>
-      <div class="recap__rank">Juara 2</div>
-      <div class="recap__name">Najma Asyfa</div>
-      <div class="recap__title">Nilai A</div>
-    </div>
-
-    <div class="recap__item" data-reveal>
-      <div class="recap__img">
-        <img src="https://drive.google.com/thumbnail?id=1L6PVEJZox7fPz5LNBftb06TmHbTrPHZg&sz=w1200" alt="Juara 1">
-      </div>
-      <div class="recap__rank">Juara 1</div>
-      <div class="recap__name">Irene Alth</div>
-      <div class="recap__title">Nilai S+</div>
-    </div>
+<!-- ============ CONNECT ON INSTAGRAM ============ -->
+<section class="connect" id="connect">
+  <div class="connect__inner">
+    <div class="connect__kicker">Connect on Instagram</div>
+    <h2 class="connect__title">Follow the story<br><em>behind the frames.</em></h2>
+    <a class="connect__handle" href="https://www.instagram.com/demianqz_/" target="_blank" rel="noopener noreferrer">
+      @demianqz_
+    </a>
   </div>
+</section>
 
-  <div class="recap__credit">
-    <span>Winner Announcement</span>
-    <a href="https://instagram.com/demianqz_" target="_blank" rel="noopener">@demianqz_</a>
+<!-- ============ PAPAN NILAI ============ -->
+<section class="scores" id="scores">
+  <div class="scores__inner">
+    <div class="scores__head">
+      <div class="eyebrow eyebrow--center">Papan Nilai</div>
+      <h2>Daftar <em>Nilai Peserta</em></h2>
+      <p id="scoresCount">Memuat data…</p>
+    </div>
+    <div class="scores__grid" id="scoresGrid"></div>
   </div>
 </section>
 
 <footer class="footer">
-  <strong>Kirmago</strong> &nbsp;&mdash;&nbsp; Photography Contest &nbsp;&mdash;&nbsp; MMXXV
+  <strong>Kirmago</strong> &nbsp;—&nbsp; Photography Contest &nbsp;—&nbsp; MMXXV
 </footer>
 
 <script>
 /* ============================================================
-   KONFIGURASI FOTO WALL
+   KONFIGURASI FOTO — EDIT DI SINI
    ============================================================
-   CARA AMBIL FILE_ID DARI DRIVE:
-   1. Klik kanan foto di Drive → Share → Copy link
-   2. Link: https://drive.google.com/file/d/XXXXX/view
-   3. Copy bagian XXXXX (itu FILE_ID)
-   4. Paste di bawah seperti: { id: 'XXXXX', label: 'Nama' }
+   CARA AMBIL FILE_ID:
+   1. Buka foto di Drive → klik kanan → Share → Copy link
+   2. Link: https://drive.google.com/file/d/XXXXXX/view?usp=sharing
+   3. Bagian XXXXXX adalah FILE_ID
 
-   CONTOH:
-   { id: '1AbCdEfGhIjKlMnOpQrStUvWxYz', label: 'Aira Alfina' },
+   CEK CEPAT: buka di browser:
+   https://drive.google.com/thumbnail?id=FILE_ID&sz=w1600
+   Kalau foto muncul → benar. Kalau blank → salah/private.
+
+   ⚠️ Aku tidak bisa memverifikasi isi Drive kamu. File ID di bawah
+   berasal dari percakapan sebelumnya + 3 link yang kamu kirim.
+   VERIFIKASI SENDIRI sebelum upload ke production.
    ============================================================ */
-var PHOTOS = [
-  { id: '1L6PVEJZox7fPz5LNBftb06TmHbTrPHZg', label: 'Irene Alth' },
-  { id: '1uRES7-1jUp_c5fKPz1BBPP5cFr-I0KGv', label: 'Najma Asyfa' },
-  { id: '1J3Cb-ECMah8XgpnuPPrApyrL0pcskudR', label: 'Selvi Ain' }
 
-  /* TAMBAHKAN FOTO LAIN DI SINI — copy baris di atas, ganti id & label: */
+var CONFIG = {
 
-  // { id: 'FILE_ID_FOTO_1', label: 'Aira Alfina' },
-  // { id: 'FILE_ID_FOTO_2', label: 'Ajeng Setia' },
-  // { id: 'FILE_ID_FOTO_3', label: 'Alifah Najwa' },
-  // { id: 'FILE_ID_FOTO_4', label: 'Annafs' },
-  // { id: 'FILE_ID_FOTO_5', label: 'Aura Silvia' },
-  // { id: 'FILE_ID_FOTO_6', label: 'Aurelio' },
-  // { id: 'FILE_ID_FOTO_7', label: 'Bintang' },
-  // { id: 'FILE_ID_FOTO_8', label: 'Calista Mahe' },
-  // { id: 'FILE_ID_FOTO_9', label: 'Casey An' },
-  // { id: 'FILE_ID_FOTO_10', label: 'Chandra' },
-  // { id: 'FILE_ID_FOTO_11', label: 'Clara Vi' },
-  // { id: 'FILE_ID_FOTO_12', label: 'Dania' },
-  // { id: 'FILE_ID_FOTO_13', label: 'Dena Aninda' },
-  // { id: 'FILE_ID_FOTO_14', label: 'Elvira Dwi' },
-  // { id: 'FILE_ID_FOTO_15', label: 'Faizah Zai' },
-  // { id: 'FILE_ID_FOTO_16', label: 'Fikri Adi' },
-  // { id: 'FILE_ID_FOTO_17', label: 'Firda' },
-  // { id: 'FILE_ID_FOTO_18', label: 'Gendis Wilujeng' },
-  // { id: 'FILE_ID_FOTO_19', label: 'Ghania N' },
-  // { id: 'FILE_ID_FOTO_20', label: 'Gracella' },
-  // { id: 'FILE_ID_FOTO_21', label: 'Hilwatul F' },
-  // { id: 'FILE_ID_FOTO_22', label: 'Hirzul Fa' },
-  // { id: 'FILE_ID_FOTO_23', label: 'Kaila Marva' },
-  // { id: 'FILE_ID_FOTO_24', label: 'Khanza F' },
-  // { id: 'FILE_ID_FOTO_25', label: 'Kharera' },
-  // { id: 'FILE_ID_FOTO_26', label: 'Lintang Najwa' },
-  // { id: 'FILE_ID_FOTO_27', label: 'Masayu' },
-  // { id: 'FILE_ID_FOTO_28', label: 'Nadira Zulfatur' },
-  // { id: 'FILE_ID_FOTO_29', label: 'Najwa Helmi' },
-  // { id: 'FILE_ID_FOTO_30', label: 'Nayla Sa' },
-  // { id: 'FILE_ID_FOTO_31', label: 'Ni Made' },
-  // { id: 'FILE_ID_FOTO_32', label: 'Oceanic' },
-  // { id: 'FILE_ID_FOTO_33', label: 'Octavia' },
-  // { id: 'FILE_ID_FOTO_34', label: 'Putri' },
-  // { id: 'FILE_ID_FOTO_35', label: 'Rachmad' },
-  // { id: 'FILE_ID_FOTO_36', label: 'Rania Ur' },
-  // { id: 'FILE_ID_FOTO_37', label: 'Reffy Anugra' },
-  // { id: 'FILE_ID_FOTO_38', label: 'Safa Elys' },
-  // { id: 'FILE_ID_FOTO_39', label: 'Safara A' },
-  // { id: 'FILE_ID_FOTO_40', label: 'Sandrina' },
-  // { id: 'FILE_ID_FOTO_41', label: 'Shyifa Imr' },
-  // { id: 'FILE_ID_FOTO_42', label: 'Suryani W' },
-  // { id: 'FILE_ID_FOTO_43', label: 'Unyike Lintag' },
-  // { id: 'FILE_ID_FOTO_44', label: 'Ursila Maulida' },
-  // { id: 'FILE_ID_FOTO_45', label: 'Yuliyana' },
-  // { id: 'FILE_ID_FOTO_46', label: 'Zahra Dify' },
-  // { id: 'FILE_ID_FOTO_47', label: 'Marizka' },
-  // { id: 'FILE_ID_FOTO_48', label: 'Hilwa' }
-];
+  /* ---------- FOTO 4 PEMENANG ---------- */
+  winners: {
+    juara1:  { fileId: '1L6PVEJZox7fPz5LNBftb06TmHbTrPHZg', name: 'Irene Alth',      grade: 'S+' },
+    juara2:  { fileId: '1uRES7-1jUp_c5fKPz1BBPP5cFr-I0KGv', name: 'Najma Asyfa',     grade: 'A'  },
+    juara3:  { fileId: '1J3Cb-ECMah8XgpnuPPrApyrL0pcskudR', name: 'Selvi Ain',       grade: 'A-' },
+    favorit: { fileId: '1PHR1WzxDUViS4N6XCPurAi8HJDfp26jV', name: 'Ursila Maulida',  grade: 'A-' }
+  },
+
+  /* ---------- FOTO WALL (semua foto) ---------- */
+  /* Tambahkan file ID foto peserta lain di array ini.
+     Semakin banyak ID, semakin kaya photo wall-nya.
+     Kalau cuma 5, ya yang tampil 5 (diulang-ulang). */
+  photoWall: [
+    '1L6PVEJZox7fPz5LNBftb06TmHbTrPHZg',
+    '1uRES7-1jUp_c5fKPz1BBPP5cFr-I0KGv',
+    '1J3Cb-ECMah8XgpnuPPrApyrL0pcskudR',
+    '1PHR1WzxDUViS4N6XCPurAi8HJDfp26jV',
+    '1334-q2mpkVkw9Lj13e06acTOW1bjA7nC'
+
+    /* Tambahkan ID foto lain di sini, contoh:
+    ,'FILE_ID_1'
+    ,'FILE_ID_2'
+    ,'FILE_ID_3'
+    */
+  ],
+
+  /* ---------- HERO BACKGROUND ---------- */
+  heroBgId: '1L6PVEJZox7fPz5LNBftb06TmHbTrPHZg'
+};
 
 /* ============================================================
-   DATA PAPAN SKOR
+   DATA NILAI PESERTA
    ============================================================ */
 var SCORES = [
-  { rank: 1,  name: 'Irene Alth',      grade: 'S+', badge: 'Winner 1' },
-  { rank: 2,  name: 'Najma Asyfa',     grade: 'A',  badge: 'Winner 2' },
-  { rank: 3,  name: 'Selvi Ain',       grade: 'A-', badge: 'Winner 3' },
-  { rank: 4,  name: 'Ursila Maulida',  grade: 'A-', badge: 'Favorit' },
-  { rank: 5,  name: 'Ajeng Setia',     grade: 'C+' },
-  { rank: 6,  name: 'Aira Alfina',     grade: 'C' },
-  { rank: 7,  name: 'Alifah Najwa',    grade: 'C' },
-  { rank: 8,  name: 'Annafs',          grade: 'C+' },
-  { rank: 9,  name: 'Aura Silvia',     grade: 'B-' },
-  { rank: 10, name: 'Aurelio',         grade: 'C' },
-  { rank: 11, name: 'Bintang',         grade: 'B+' },
-  { rank: 12, name: 'Calista Mahe',    grade: 'D' },
-  { rank: 13, name: 'Casey An',        grade: 'C-' },
-  { rank: 14, name: 'Chandra',         grade: 'C+' },
-  { rank: 15, name: 'Clara Vi',        grade: 'B' },
-  { rank: 16, name: 'Dania',           grade: 'D' },
-  { rank: 17, name: 'Dena Aninda',     grade: 'C+' },
-  { rank: 18, name: 'Elvira Dwi',      grade: 'B+' },
-  { rank: 19, name: 'Faizah Zai',      grade: 'B' },
-  { rank: 20, name: 'Fikri Adi',       grade: 'C-' },
-  { rank: 21, name: 'Firda',           grade: 'B' },
-  { rank: 22, name: 'Gendis Wilujeng', grade: 'C' },
-  { rank: 23, name: 'Ghania N',        grade: 'B+' },
-  { rank: 24, name: 'Gracella',        grade: 'C+' },
-  { rank: 25, name: 'Hilwatul F',      grade: 'D' },
-  { rank: 26, name: 'Hirzul Fa',       grade: 'D-' },
-  { rank: 27, name: 'Kaila Marva',     grade: 'B' },
-  { rank: 28, name: 'Khanza F',        grade: 'B-' },
-  { rank: 29, name: 'Kharera',         grade: 'C-' },
-  { rank: 30, name: 'Lintang Najwa',   grade: 'B+' },
-  { rank: 31, name: 'Masayu',          grade: 'C+' },
-  { rank: 32, name: 'Nadira Zulfatur', grade: 'B-' },
-  { rank: 33, name: 'Najwa Helmi',     grade: 'B' },
-  { rank: 34, name: 'Nayla Sa',        grade: 'B-' },
-  { rank: 35, name: 'Ni Made',         grade: 'B' },
-  { rank: 36, name: 'Oceanic',         grade: 'D-' },
-  { rank: 37, name: 'Octavia',         grade: 'B-' },
-  { rank: 38, name: 'Putri',           grade: 'B+' },
-  { rank: 39, name: 'Rachmad',         grade: 'B+' },
-  { rank: 40, name: 'Rania Ur',        grade: 'C-' },
-  { rank: 41, name: 'Reffy Anugra',    grade: 'C' },
-  { rank: 42, name: 'Safa Elys',       grade: 'B+' },
-  { rank: 43, name: 'Safara A',        grade: 'C+' },
-  { rank: 44, name: 'Sandrina',        grade: 'C-' },
-  { rank: 45, name: 'Shyifa Imr',      grade: 'B-' },
-  { rank: 46, name: 'Suryani W',       grade: 'C' },
-  { rank: 47, name: 'Unyike Lintag',   grade: 'C+' },
-  { rank: 48, name: 'Yuliyana',        grade: 'B+' },
-  { rank: 49, name: 'Zahra Dify',      grade: 'D' },
-  { rank: 50, name: 'Marizka',         grade: 'C+' },
-  { rank: 51, name: 'Hilwa',           grade: 'B+' }
+  { name: 'Irene Alth',      grade: 'S+', badge: 'Juara 1' },
+  { name: 'Najma Asyfa',     grade: 'A',  badge: 'Juara 2' },
+  { name: 'Selvi Ain',       grade: 'A-', badge: 'Juara 3' },
+  { name: 'Ursila Maulida',  grade: 'A-', badge: 'Favorit' },
+  { name: 'Aira Alfina',     grade: 'C'  },
+  { name: 'Ajeng Setia',     grade: 'C+' },
+  { name: 'Alifah Najwa',    grade: 'C'  },
+  { name: 'Annafs',          grade: 'C+' },
+  { name: 'Aura Silvia',     grade: 'B-' },
+  { name: 'Aurelio',         grade: 'C'  },
+  { name: 'Bintang',         grade: 'B+' },
+  { name: 'Calista Mahe',    grade: 'D'  },
+  { name: 'Casey An',        grade: 'C-' },
+  { name: 'Chandra',         grade: 'C+' },
+  { name: 'Clara Vi',        grade: 'B'  },
+  { name: 'Dania',           grade: 'D'  },
+  { name: 'Dena Aninda',     grade: 'C+' },
+  { name: 'Elvira Dwi',      grade: 'B+' },
+  { name: 'Faizah Zai',      grade: 'B'  },
+  { name: 'Fikri Adi',       grade: 'C-' },
+  { name: 'Firda',           grade: 'B'  },
+  { name: 'Gendis Wilujeng', grade: 'C'  },
+  { name: 'Ghania N',        grade: 'B+' },
+  { name: 'Gracella',        grade: 'C+' },
+  { name: 'HilwatulF',       grade: 'D'  },
+  { name: 'Hirzul Fa',       grade: 'D-' },
+  { name: 'Kaila Marva',     grade: 'B'  },
+  { name: 'Khanza F',        grade: 'B-' },
+  { name: 'Kharera',         grade: 'C-' },
+  { name: 'Lintang Najwa',   grade: 'B+' },
+  { name: 'Masayu',          grade: 'C+' },
+  { name: 'Nadira Zulfatur', grade: 'B-' },
+  { name: 'Najwa Helmi',     grade: 'B'  },
+  { name: 'Nayla Sa',        grade: 'B-' },
+  { name: 'Ni Made',         grade: 'B'  },
+  { name: 'Oceanic',         grade: 'D-' },
+  { name: 'Octavia',         grade: 'B-' },
+  { name: 'Putri',           grade: 'B+' },
+  { name: 'Rachmad',         grade: 'B+' },
+  { name: 'Rania Ur',        grade: 'C-' },
+  { name: 'Reffy Anugra',    grade: 'C'  },
+  { name: 'Safa Elys',       grade: 'B+' },
+  { name: 'Safara A',        grade: 'C+' },
+  { name: 'Sandrina',        grade: 'C-' },
+  { name: 'Shyifa Imr',      grade: 'B-' },
+  { name: 'Suryani W',       grade: 'C'  },
+  { name: 'Unyike Lintag',   grade: 'C+' },
+  { name: 'Yuliyana',        grade: 'B+' },
+  { name: 'Zahra Dify',      grade: 'D'  },
+  { name: 'Marizka',         grade: 'C+' },
+  { name: 'Hilwa',           grade: 'B+' }
 ];
 
 /* ============================================================
-   BUILD PHOTO WALL
+   HELPER
    ============================================================ */
-(function buildPhotoWall() {
-  var track = document.getElementById('photoWallTrack');
-  if (!track) return;
+(function () {
+  'use strict';
 
-  var html = '';
-  for (var i = 0; i < PHOTOS.length; i++) {
-    var p = PHOTOS[i];
-    var url = 'https://drive.google.com/thumbnail?id=' + p.id + '&sz=w1200';
-    html += '<div class="photo-wall__item" data-wall>'
-          + '<img src="' + url + '" alt="' + p.label + '" loading="lazy">'
-          + '<span class="photo-wall__label">' + p.label + '</span>'
-          + '</div>';
-  }
-  track.innerHTML = html;
-})();
-
-/* ============================================================
-   BUILD PAPAN SKOR
-   ============================================================ */
-(function buildScores() {
-  var grid = document.getElementById('scoresGrid');
-  if (!grid) return;
-
-  function gradeClass(g) {
-    var first = g.charAt(0);
-    if (first === 'S') return 'grade-s';
-    if (first === 'A') return 'grade-a';
-    if (first === 'B') return 'grade-b';
-    if (first === 'C') return 'grade-c';
-    return 'grade-d';
+  function driveUrl(fileId, size) {
+    size = size || 'w1600';
+    return 'https://drive.google.com/thumbnail?id=' + fileId + '&sz=' + size;
   }
 
-  function pad(n) {
-    return n < 10 ? '0' + n : '' + n;
+  function $(s) { return document.querySelector(s); }
+
+  function setImg(el, fileId, size) {
+    if (!el || !fileId) return;
+    el.src = driveUrl(fileId, size);
   }
 
-  var html = '';
-  for (var i = 0; i < SCORES.length; i++) {
-    var s = SCORES[i];
-    var isWinner = !!s.badge;
-    var badge = s.badge ? ' <span class="score-item__badge">' + s.badge + '</span>' : '';
-    html += '<div class="score-item' + (isWinner ? ' score-item--winner' : '') + '">'
-          + '<span class="score-item__rank">' + pad(s.rank) + '</span>'
-          + '<span class="score-item__name">' + s.name + badge + '</span>'
-          + '<span class="score-item__grade ' + gradeClass(s.grade) + '">' + s.grade + '</span>'
-          + '</div>';
-  }
-  grid.innerHTML = html;
-})();
+  /* ---------- ISI FOTO PEMENANG ---------- */
+  var W = CONFIG.winners;
 
-/* ============================================================
-   GRAIN
-   ============================================================ */
-(function grain() {
-  try {
-    var canvas = document.getElementById('grainCanvas');
-    if (!canvas) return;
-    var ctx = canvas.getContext('2d', { alpha: true });
-    var W = 220, H = 220;
-    canvas.width = W;
-    canvas.height = H;
-    var frames = [];
-    for (var f = 0; f < 5; f++) {
-      var img = ctx.createImageData(W, H);
-      var d = img.data;
-      for (var i = 0; i < d.length; i += 4) {
-        var v = (Math.random() * 255) | 0;
-        d[i] = d[i + 1] = d[i + 2] = v;
-        d[i + 3] = 24;
+  setImg($('#imgJuara1'), W.juara1.fileId, 'w2000');
+  setImg($('#imgJuara2'), W.juara2.fileId, 'w2000');
+  setImg($('#imgJuara3'), W.juara3.fileId, 'w2000');
+  setImg($('#imgFavorit'), W.favorit.fileId, 'w2000');
+
+  setImg($('#recapImg1'), W.juara1.fileId, 'w1200');
+  setImg($('#recapImg2'), W.juara2.fileId, 'w1200');
+  setImg($('#recapImg3'), W.juara3.fileId, 'w1200');
+  setImg($('#recapImgFav'), W.favorit.fileId, 'w1200');
+
+  setImg($('#heroBg'), CONFIG.heroBgId, 'w2000');
+
+  $('#nameJuara1').textContent = W.juara1.name;
+  $('#nameJuara2').textContent = W.juara2.name;
+  $('#nameJuara3').textContent = W.juara3.name;
+  $('#nameFavorit').textContent = W.favorit.name;
+
+  $('#gradeJuara1').textContent = W.juara1.grade;
+  $('#gradeJuara2').textContent = W.juara2.grade;
+  $('#gradeJuara3').textContent = W.juara3.grade;
+  $('#gradeFavorit').textContent = W.favorit.grade;
+
+  $('#recapName1').textContent = W.juara1.name;
+  $('#recapName2').textContent = W.juara2.name;
+  $('#recapName3').textContent = W.juara3.name;
+  $('#recapNameFav').textContent = W.favorit.name;
+
+  /* ---------- BUILD PHOTO WALL ---------- */
+  (function buildPhotoWall() {
+    var ids = CONFIG.photoWall || [];
+    if (!ids.length) return;
+
+    function makeRowHtml() {
+      var html = '';
+      for (var i = 0; i < ids.length; i++) {
+        var url = driveUrl(ids[i], 'w800');
+        html += '<div class="photo-wall__item">'
+              + '<img src="' + url + '" alt="" loading="lazy" data-fallback>'
+              + '</div>';
       }
-      frames.push(img);
+      return html;
     }
-    var idx = 0, last = 0;
-    var interval = 1000 / 14;
-    function loop(t) {
-      if (t - last >= interval) {
-        last = t;
-        idx = (idx + 1) % frames.length;
-        ctx.putImageData(frames[idx], 0, 0);
-      }
-      requestAnimationFrame(loop);
-    }
-    requestAnimationFrame(loop);
-  } catch (e) {}
-})();
 
-/* ============================================================
-   PROGRESS BAR
-   ============================================================ */
-(function progress() {
-  try {
-    var bar = document.getElementById('progress');
-    if (!bar) return;
-    var raf = null;
-    function update() {
-      var h = document.documentElement.scrollHeight - window.innerHeight;
-      var p = h > 0 ? (window.scrollY / h) * 100 : 0;
-      bar.style.width = p + '%';
-      raf = null;
-    }
-    window.addEventListener('scroll', function () {
-      if (!raf) raf = requestAnimationFrame(update);
-    }, { passive: true });
-    update();
-  } catch (e) {}
-})();
+    // Duplicate content for seamless loop
+    var rowHtml = makeRowHtml() + makeRowHtml();
 
-/* ============================================================
-   SCROLL REVEAL
-   ============================================================ */
-(function scrollReveal() {
-  try {
-    var targets = document.querySelectorAll('[data-reveal], [data-winner], [data-wall]');
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-in');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-      Array.prototype.forEach.call(targets, function (el) { io.observe(el); });
-    } else {
-      Array.prototype.forEach.call(targets, function (el) { el.classList.add('is-in'); });
-    }
-  } catch (e) {}
-})();
+    var row1 = $('#row1');
+    var row2 = $('#row2');
+    var row3 = $('#row3');
 
-/* ============================================================
-   START BUTTON
-   ============================================================ */
-(function startButton() {
-  try {
-    var btn = document.getElementById('startBtn');
-    var wall = document.getElementById('photo-wall');
-    if (btn && wall) {
-      btn.addEventListener('click', function () {
-        var y = wall.getBoundingClientRect().top + window.scrollY - 20;
-        try {
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        } catch (err) {
-          window.scrollTo(0, y);
-        }
-      });
-    }
-  } catch (e) {}
-})();
+    if (row1) row1.innerHTML = rowHtml;
+    if (row2) row2.innerHTML = rowHtml;
+    if (row3) row3.innerHTML = rowHtml;
+  })();
 
-/* ============================================================
-   IMAGE FALLBACK
-   ============================================================ */
-(function imageFallback() {
-  try {
-    var imgs = document.querySelectorAll('img');
+  /* ---------- BUILD SCORES ---------- */
+  (function buildScores() {
+    var grid = $('#scoresGrid');
+    if (!grid) return;
+
+    var countEl = $('#scoresCount');
+    if (countEl) countEl.textContent = SCORES.length + ' peserta — hasil penilaian juri';
+
+    function gradeClass(g) {
+      var first = String(g).charAt(0);
+      if (first === 'S') return 'grade-s';
+      if (first === 'A') return 'grade-a';
+      if (first === 'B') return 'grade-b';
+      if (first === 'C') return 'grade-c';
+      return 'grade-d';
+    }
+
+    function pad(n) {
+      return n < 10 ? '0' + n : '' + n;
+    }
+
+    var html = '';
+    for (var i = 0; i < SCORES.length; i++) {
+      var s = SCORES[i];
+      var isWinner = !!s.badge;
+      var badge = s.badge
+        ? ' <span class="score-item__badge">' + s.badge + '</span>'
+        : '';
+      html += '<div class="score-item' + (isWinner ? ' score-item--winner' : '') + '">'
+            + '<span class="score-item__rank">' + pad(i + 1) + '</span>'
+            + '<span class="score-item__name">' + s.name + badge + '</span>'
+            + '<span class="score-item__grade ' + gradeClass(s.grade) + '">' + s.grade + '</span>'
+            + '</div>';
+    }
+    grid.innerHTML = html;
+  })();
+
+  /* ---------- IMAGE FALLBACK ---------- */
+  (function imageFallback() {
+    var imgs = document.querySelectorAll('img[data-fallback]');
     Array.prototype.forEach.call(imgs, function (img) {
       img.addEventListener('error', function () {
         var parent = img.parentNode;
-        if (parent && !parent.querySelector('.img-fallback')) {
-          var fb = document.createElement('div');
-          fb.className = 'img-fallback';
-          fb.textContent = 'Gambar tidak tersedia';
-          parent.appendChild(fb);
-          img.style.display = 'none';
-        }
+        if (!parent) return;
+        if (parent.querySelector('.img-fallback')) return;
+        var fb = document.createElement('div');
+        fb.className = 'img-fallback';
+        fb.textContent = 'Foto belum tersedia';
+        parent.appendChild(fb);
+        img.style.display = 'none';
       }, { once: true });
     });
-  } catch (e) {}
-})();
+  })();
 
+  /* ---------- GRAIN ---------- */
+  (function grain() {
+    try {
+      var canvas = document.getElementById('grainCanvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d', { alpha: true });
+      var W = 220, H = 220;
+      canvas.width = W;
+      canvas.height = H;
+      var frames = [];
+      for (var f = 0; f < 5; f++) {
+        var imgData = ctx.createImageData(W, H);
+        var d = imgData.data;
+        for (var i = 0; i < d.length; i += 4) {
+          var v = (Math.random() * 255) | 0;
+          d[i] = d[i + 1] = d[i + 2] = v;
+          d[i + 3] = 22;
+        }
+        frames.push(imgData);
+      }
+      var idx = 0, last = 0;
+      var interval = 1000 / 14;
+      function loop(t) {
+        if (t - last >= interval) {
+          last = t;
+          idx = (idx + 1) % frames.length;
+          ctx.putImageData(frames[idx], 0, 0);
+        }
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    } catch (e) {}
+  })();
+
+  /* ---------- PROGRESS BAR ---------- */
+  (function progress() {
+    try {
+      var bar = document.getElementById('progress');
+      if (!bar) return;
+      var raf = null;
+      function update() {
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        var p = h > 0 ? (window.scrollY / h) * 100 : 0;
+        bar.style.width = p + '%';
+        raf = null;
+      }
+      window.addEventListener('scroll', function () {
+        if (!raf) raf = requestAnimationFrame(update);
+      }, { passive: true });
+      update();
+    } catch (e) {}
+  })();
+
+  /* ---------- SCROLL REVEAL ---------- */
+  (function scrollReveal() {
+    try {
+      var targets = document.querySelectorAll('[data-reveal], [data-winner]');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-in');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+        Array.prototype.forEach.call(targets, function (el) { io.observe(el); });
+      } else {
+        Array.prototype.forEach.call(targets, function (el) {
+          el.classList.add('is-in');
+        });
+      }
+    } catch (e) {
+      Array.prototype.forEach.call(
+        document.querySelectorAll('[data-reveal], [data-winner]'),
+        function (el) { el.classList.add('is-in'); }
+      );
+    }
+  })();
+
+  /* ---------- START BUTTON ---------- */
+  (function startButton() {
+    try {
+      var btn = document.getElementById('startBtn');
+      var wall = document.getElementById('photo-wall');
+      if (btn && wall) {
+        btn.addEventListener('click', function () {
+          var y = wall.getBoundingClientRect().top + window.scrollY - 10;
+          try { window.scrollTo({ top: y, behavior: 'smooth' }); }
+          catch (err) { window.scrollTo(0, y); }
+        });
+      }
+    } catch (e) {}
+  })();
+
+  /* ---------- CONTINUE BUTTON ---------- */
+  (function continueButton() {
+    try {
+      var btn = document.getElementById('continueBtn');
+      var target = document.getElementById('juara-3');
+      if (btn && target) {
+        btn.addEventListener('click', function () {
+          var y = target.getBoundingClientRect().top + window.scrollY - 10;
+          try { window.scrollTo({ top: y, behavior: 'smooth' }); }
+          catch (err) { window.scrollTo(0, y); }
+        });
+      }
+    } catch (e) {}
+  })();
+
+})();
 </script>
+
 </body>
 </html>
