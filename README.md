@@ -1,2 +1,0 @@
-# Kirmago-website
-Papale
