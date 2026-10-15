@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIRMAGO Photography Contest - Winner Announcement</title>
+<meta name="description" content="Pengumuman pemenang KIRMAGO Photography Contest.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="vignette"></div>
+<div class="grain"><canvas id="grainCanvas"></canvas></div>
+
+<nav class="nav">
+  <span class="nav__brand">Kirmago</span>
+  <span class="nav__year">MMXXV</span>
+</nav>
+
+<header class="hero" id="hero">
+  <div class="hero__bg">
+    <img id="heroBg" src="" alt="" data-fallback>
+  </div>
+  <div class="hero__content">
+    <div class="hero__kicker">Winner Announcement</div>
+    <h1 class="hero__title">
+      <span>K</span><span>I</span><span>R</span><span>M</span><span>A</span><span>G</span><span>O</span>
+    </h1>
+    <p class="hero__sub">Photography Contest</p>
+    <button class="hero__cta" id="startBtn" type="button">
+      <span class="hero__cta-dot"></span>
+      Mulai Pengumuman
+    </button>
+  </div>
+  <div class="hero__scroll">
+    <span>Gulir</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</header>
+
+<section class="photo-wall" id="photo-wall">
+  <div class="photo-wall__head">
+    <div class="eyebrow">Photo Wall</div>
+    <h2>Setiap bingkai<br><em>adalah cerita.</em></h2>
+    <p class="photo-wall__sub">Karya-karya yang masuk ke dalam kurasi KIRMAGO Photography Contest.</p>
+  </div>
+
+  <div class="photo-wall__rows">
+    <div class="photo-wall__row photo-wall__row--left" id="row1"></div>
+    <div class="photo-wall__row photo-wall__row--right" id="row2"></div>
+    <div class="photo-wall__row photo-wall__row--left photo-wall__row--slow" id="row3"></div>
+  </div>
+
+  <div class="photo-wall__cta">
+    <button class="hero__cta" id="continueBtn" type="button">
+      <span class="hero__cta-dot"></span>
+      Lihat Para Pemenang
+    </button>
+  </div>
+</section>
+
+<section class="reveal-section" id="juara-3">
+  <div class="reveal-section__inner">
+    <div class="eyebrow eyebrow--center">Juara 3</div>
+    <article class="winner" data-winner>
+      <div class="winner__media">
+        <div class="winner__frame">
+          <img id="imgJuara3" src="" alt="Karya Juara 3" data-fallback>
+        </div>
+        <div class="winner__badge">Juara 3</div>
+        <div class="winner__ghost">03</div>
+      </div>
+      <div class="winner__body">
+        <div class="winner__rank">Peringkat Ketiga</div>
+        <h2 class="winner__name" id="nameJuara3">Selvi Ainur Risma</h2>
+        <p class="winner__title">Nilai <span class="winner__grade" id="gradeJuara3">A-</span></p>
+        <h3 class="winner__story-title">Manusia dan Lingkungan</h3>
+        <p class="winner__desc">Dari foto ini, kita dapat melihat hubungan antara manusia dan lingkungan. Kelompok siswa berada di depan bangunan sekolah dengan mengenakan pakaian seragam berwarna putih. Di sekitar mereka, terdapat tanaman hijau, bunga berwarna cerah, pepohonan, serta bangunan yang menjadi bagian dari lingkungan sekolah.</p>
+        <p class="winner__desc">Kehadiran tanaman memberikan kesan asri di tengah aktivitas manusia. Namun, kendaraan bermotor dan permukaan jalan juga menunjukkan bahwa lingkungan terus digunakan untuk memenuhi kebutuhan manusia.</p>
+        <p class="winner__desc">Foto ini mengingatkan kita bahwa manusia dan lingkungan saling berkaitan. Oleh karena itu, menjaga kebersihan, merawat tanaman, dan melestarikan lingkungan merupakan tanggung jawab bersama demi masa depan.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="reveal-section reveal-section--alt" id="juara-2">
+  <div class="reveal-section__inner">
+    <div class="eyebrow eyebrow--center">Juara 2</div>
+    <article class="winner winner--flip" data-winner>
+      <div class="winner__media">
+        <div class="winner__frame">
+          <img id="imgJuara2" src="" alt="Karya Juara 2" data-fallback>
+        </div>
+        <div class="winner__badge">Juara 2</div>
+        <div class="winner__ghost">02</div>
+      </div>
+      <div class="winner__body">
+        <div class="winner__rank">Runner Up</div>
+        <h2 class="winner__name" id="nameJuara2">Najma Asyfa Putri</h2>
+        <p class="winner__title">Nilai <span class="winner__grade" id="gradeJuara2">A</span></p>
+        <h3 class="winner__story-title">Jejak Budaya, Cahaya Harapan</h3>
+        <p class="winner__desc">Melihat foto ini, tercipta suasana sunyi yang seolah memisahkan kita dari kebisingan dunia luar. Walaupun tidak tampak sosok manusia di dalam bingkai, kehadiran sang perawat budaya terasa begitu kuat melalui penataan ruangan yang tersusun sangat rapi.</p>
+        <p class="winner__desc">Kursi kosong yang menghadap ke depan seakan-akan mengajak siapa saja untuk duduk sejenak, melepas lelah, sambil mengapresiasi keindahan berbagai ornamen tradisional di dalam etalase.</p>
+        <p class="winner__desc">Sementara itu, pendar cahaya terang yang menerobos masuk dari arah jendela melambangkan sebuah harapan yang senantiasa hidup: nilai-nilai luhur dan kekayaan budaya bangsa akan terus terjaga serta bersinar di tengah pesatnya arus modernisasi. Budaya tidak harus punah oleh perubahan zaman, tetapi dapat terus dijaga dan dikembangkan.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="reveal-section reveal-section--grand" id="juara-1">
+  <div class="reveal-section__inner">
+    <div class="eyebrow eyebrow--center">Juara 1</div>
+    <article class="winner winner--grand" data-winner>
+      <div class="winner__media">
+        <div class="winner__frame winner__frame--grand">
+          <img id="imgJuara1" src="" alt="Karya Juara 1" data-fallback>
+        </div>
+        <div class="winner__badge winner__badge--grand">Juara 1</div>
+        <div class="winner__ghost winner__ghost--grand">01</div>
+      </div>
+      <div class="winner__body">
+        <div class="winner__rank winner__rank--grand">Pemenang Utama</div>
+        <h2 class="winner__name winner__name--grand" id="nameJuara1">Irene Althafunnida</h2>
+        <p class="winner__title">Nilai <span class="winner__grade" id="gradeJuara1">S+</span></p>
+        <h3 class="winner__story-title">Merawat Kehidupan</h3>
+        <p class="winner__desc">Rawat aku, rawat aku, begitu kira-kira suara tanaman dalam candaan seorang bapak yang sedang merawatnya. Di balik candanya yang sederhana, tersimpan makna mendalam: setiap proses kehidupan membutuhkan perhatian dan kesabaran untuk terus tumbuh.</p>
+        <p class="winner__desc">Merawat bukan sekadar menanam dan menunggu hasil, melainkan tentang ketekunan menjaga kehidupan, bahkan ketika hasilnya belum terlihat.</p>
+        <p class="winner__desc">Tanaman memang tak bisa berbicara. Namun, dari tangan yang merawatnya, kita belajar bahwa setiap kehidupan layak mendapatkan waktu, perhatian, dan kesempatan untuk tumbuh.</p>
+        <p class="winner__desc">Sebab, kepedulian tidak selalu hadir melalui kata-kata besar, tetapi juga melalui tindakan sederhana yang menjaga kehidupan tetap tumbuh dan menghadirkan kehangatan antara sesama makhluk ciptaan Tuhan melalui interaksinya.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="reveal-section reveal-section--alt" id="juara-favorit">
+  <div class="reveal-section__inner">
+    <div class="eyebrow eyebrow--center">Juara Favorit</div>
+    <article class="winner winner--flip" data-winner>
+      <div class="winner__media">
+        <div class="winner__frame">
+          <img id="imgFavorit" src="" alt="Karya Juara Favorit" data-fallback>
+        </div>
+        <div class="winner__badge winner__badge--fav">Favorit</div>
+        <div class="winner__ghost">F</div>
+      </div>
+      <div class="winner__body">
+        <div class="winner__rank">Pilihan Favorit</div>
+        <h2 class="winner__name" id="nameFavorit">Ursila Maulida</h2>
+        <p class="winner__title">Nilai <span class="winner__grade" id="gradeFavorit">A-</span></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="recap" id="recap">
+  <div class="recap__inner">
+    <div class="eyebrow eyebrow--center">Recap</div>
+    <h2 class="section-title">Empat <em>karya terpilih.</em></h2>
+    <p class="recap__sub">Perjalanan panjang yang berakhir pada empat bingkai ini.</p>
+
+    <div class="recap__grid">
+      <div class="recap__item" data-reveal>
+        <div class="recap__img"><img id="recapImg3" src="" alt="Juara 3" data-fallback></div>
+        <div class="recap__rank">Juara 3</div>
+        <div class="recap__name" id="recapName3">Selvi Ainur Risma</div>
+        <div class="recap__title">Nilai A-</div>
+      </div>
+      <div class="recap__item" data-reveal>
+        <div class="recap__img"><img id="recapImg2" src="" alt="Juara 2" data-fallback></div>
+        <div class="recap__rank">Juara 2</div>
+        <div class="recap__name" id="recapName2">Najma Asyfa Putri</div>
+        <div class="recap__title">Nilai A</div>
+      </div>
+      <div class="recap__item" data-reveal>
+        <div class="recap__img"><img id="recapImg1" src="" alt="Juara 1" data-fallback></div>
+        <div class="recap__rank">Juara 1</div>
+        <div class="recap__name" id="recapName1">Irene Althafunnida</div>
+        <div class="recap__title">Nilai S+</div>
+      </div>
+      <div class="recap__item" data-reveal>
+        <div class="recap__img"><img id="recapImgFav" src="" alt="Juara Favorit" data-fallback></div>
+        <div class="recap__rank">Favorit</div>
+        <div class="recap__name" id="recapNameFav">Ursila Maulida</div>
+        <div class="recap__title">Nilai A-</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="connect" id="connect">
+  <div class="connect__inner">
+    <div class="connect__kicker">Connect on Instagram</div>
+    <h2 class="connect__title">Follow the story<br><em>behind the frames.</em></h2>
+    <a class="connect__handle" href="https://www.instagram.com/demianqz_/" target="_blank" rel="noopener noreferrer">@demianqz_</a>
+  </div>
+</section>
+
+<section class="scores" id="scores">
+  <div class="scores__inner">
+    <div class="scores__head">
+      <div class="eyebrow eyebrow--center">Papan Nilai</div>
+      <h2>Daftar <em>Nilai Peserta</em></h2>
+      <p>52 peserta - hasil penilaian juri</p>
+    </div>
+    <div class="scores__grid" id="scoresGrid">
+      <div class="score-item score-item--winner"><span class="score-item__rank">01</span><span class="score-item__name">Irene Althafunnida <span class="score-item__badge">Juara 1</span></span><span class="score-item__grade grade-s">S+</span></div>
+      <div class="score-item score-item--winner"><span class="score-item__rank">02</span><span class="score-item__name">Najma Asyfa Putri <span class="score-item__badge">Juara 2</span></span><span class="score-item__grade grade-a">A</span></div>
+      <div class="score-item score-item--winner"><span class="score-item__rank">03</span><span class="score-item__name">Selvi Ainur Risma <span class="score-item__badge">Juara 3</span></span><span class="score-item__grade grade-a">A-</span></div>
+      <div class="score-item score-item--winner"><span class="score-item__rank">04</span><span class="score-item__name">Ursila Maulida <span class="score-item__badge">Favorit</span></span><span class="score-item__grade grade-a">A-</span></div>
+      <div class="score-item"><span class="score-item__rank">05</span><span class="score-item__name">Aira Alfina Putri</span><span class="score-item__grade grade-c">C</span></div>
+      <div class="score-item"><span class="score-item__rank">06</span><span class="score-item__name">Ajeng Setianingsih</span><span class="score-item__grade grade-c">C+</span></div>
+      <div class="score-item"><span class="score-item__rank">07</span><span class="score-item__name">Alifah Najwa Hapsari</span><span class="score-item__grade grade-c">C</span></div>
+      <div class="score-item"><span class="score-item__rank">08</span><span class="score-item__name">Annafs</span><span class="score-item__grade grade-c">C+</span></div>
+      <div class="score-item"><span class="score-item__rank">09</span><span class="score-item__name">Aura Silviana Indriani Santoso</span><span class="score-item__grade grade-b">B-</span></div>
+      <div class="score-item"><span class="score-item__rank">10</span><span class="score-item__name">Aurelio Fritzi A</span><span class="score-item__grade grade-c">C</span></div>
+      <div class="score-item"><span class="score-item__rank">11</span><span class="score-item__name">Bintang Aprilia</span><span class="score-item__grade grade-b">B+</span></div>
+      <div class="score-item"><span class="score-item__rank">12</span><span class="score-item__name">Callista Maheswari Fellisha Fitri</span><span class="score-item__grade grade-d">D</span></div>
+      <div class="score-item"><span class="score-item__rank">13</span><span class="score-item__name">Casey Andrea Athaya</span><span class="score-item__grade grade-c">C-</span></div>
+      <div class="score-item"><span class="score-item__rank">14</span><span class="score-item__name">Chandra Wicaksono</span><span class="score-item__grade grade-c">C+</span></div>
+      <div class="score-item"><span class="score-item__rank">15</span><span class="score-item__name">Clara Viloniya Sukma Rahmadani</span><span class="score-item__grade grade-b">B</span></div>
+      <div class="score-item"><span class="score-item__rank">16</span><span class="score-item__name">Dania</span><span class="score-item__grade grade-d">D</span></div>
+      <div class="score-item"><span class="score-item__rank">17</span><span class="score-item__name">Dena Aninda Saputri</span><span class="score-item__grade grade-c">C+</span></div>
+      <div class="score-item"><span class="score-item__rank">18</span><span class="score-item__name">Elvira Dwi Septiani</span><span class="score-item__grade grade-b">B+</span></div>
+      <div class="score-item"><span class="score-item__rank">19</span><span class="score-item__name">Faizah Zaimatus Sholiha</span><span class="score-item__grade grade-b">B</span></div>
+      <div class="score-item"><span class="score-item__rank">20</span><span class="score-item__name">Fikri Adi Haikal</span><span class="score-item__grade grade-c">C-</span></div>
+      <div class="score-item"><span class="score-item__rank">21</span><span class="score-item__name">Firda</span><span class="score-item__grade grade-b">B</span></div>
+      <div class="score-item"><span class="score-item__rank">22</span><span class="score-item__name">Gendis Wilujeng Kinanti</span><span class="score-item__grade grade-c">C</span></div>
+      <div class="score-item"><span class="score-item__rank">23</span><span class="score-item__name">Ghania Nayyara Aldana</span><span class="score-item__grade grade-b">B+</span></div>
+      <div class="score-item"><span class="score-item__rank">24</span><span class="score-item__name">Gracella Candra Kirana Dewi</span><span class="score-item__grade grade-c">C+</span></div>
+      <div class="score-item"><span class="score-item__rank">25</span><span class="score-item__name">Hilwatul Fuadah Nuris Sakinah</span><span class="score-item__grade grade-d">D</span></div>
+      <div class="score-item"><span class="score-item__rank">26</span><span class="score-item__name">Hirzul Fahmi Akmal</span><span class="score-item__grade grade-d">D-</span></div>
+      <div class="score-item"><span class="score-item__rank">27</span><span class="score-item__name">Kaila Marva</span><span class="score-item__grade grade-b">B</span></div>
+      <div class="score-item"><span class="score-item__rank">28</span><span class="score-item__name">Khanza Fredelina Jacinda</span><span class="score-item__grade grade-b">B-</span></div>
+      <div class="score-item"><span class="score-item__rank">29</span><span class="score-item__name">Kharera Marsya Novellia</span><span class="score-item__grade grade-c">C-</span></div>
+      <div class="score-item"><span class="score-item__rank">30</span><span class="score-item__name">Lintang Najwa A.</span><span class="score-item__grade grade-b">B+</span></div>
+      <div class="score-item"><span class="score-item__rank">31</span><span class="score-item__name">Masayu Magnolia Adininggar</span><span class="score-item__grade grade-c">C+</span></div>
+      <div class="score-item"><span class="score-item__rank">32</span><span class="score-item__name">Moh Javier Aryano</span><span class="score-item__grade grade-d">-</span></div>
+      <div class="score-item"><span class="score-item__rank">33</span><span class="score-item__name">Nadira Zulfatur Rosyadi</span><span class="score-item__grade grade-b">B-</span></div>
+      <div class="score-item"><span class="score-item__rank">34</span><span class="score-item__name">Najwa Helmi</span><span class="score-item__grade grade-b">B</span></div>
+      <div class="score-item"><span class="score-item__rank">35</span><span class="score-item__name">Nayla Salsa H. P.</span><span class="score-item__grade grade-b">B-</span></div>
+      <div class="score-item"><span class="score-item__rank">36</span><span class="score-item__name">Ni Made Dwi Puspitasari</span><span class="score-item__grade grade-b">B</span></div>
+      <div class="score-item"><span class="score-item__rank">37</span><span class="score-item__name">Oceanic Christiawan</span><span class="score-item__grade grade-d">D-</span></div>
+      <div class="score-item"><span class="score-item__rank">38</span><span class="score-item__name">Octavia Andita Syahfitri</span><span class="score-item__grade grade-b">B-</span></div>
+      <div class="score-item"><span class="score-item__rank">39</span><span class="score-item__name">Putri</span><span class="score-item__grade grade-b">B+</span></div>
+      <div class="score-item"><span class="score-item__rank">40</span><span class="score-item__name">Rachma Chairun Nisa</span><span class="score-item__grade grade-b">B+</span></div>
+      <div class="score-item"><span class="score-item__rank">41</span><span class="score-item__name">Rania Urmilah Meilasari</span><span class="score-item__grade grade-c">C-</span></div>
+      <div class="score-item"><span class="score-item__rank">42</span><span class="score-item__name">Reffy Anugra</span><span class="score-item__grade grade-c">C</span></div>
+      <div class="score-item"><span class="score-item__rank">43</span><span class="score-item__name">Safa Elysia Labibah</span><span class="score-item__grade grade-b">B+</span></div>
+      <div class="score-item"><span class="score-item__rank">44</span><span class="score-item__name">Safaraz Abiyu Alme</span><span class="score-item__grade grade-c">C+</span></div>
+      <div class="score-item"><span class="score-item__rank">45</span><span class="score-item__name">Sandrina Salsabila Fatiha</span><span class="score-item__grade grade-c">C-</span></div>
+      <div class="score-item"><span class="score-item__rank">46</span><span class="score-item__name">Shyifa Imrotus Sholehah</span><span class="score-item__grade grade-b">B-</span></div>
+      <div class="score-item"><span class="score-item__rank">47</span><span class="score-item__name">Suryani Wahyuningsih</span><span class="score-item__grade grade-c">C</span></div>
+      <div class="score-item"><span class="score-item__rank">48</span><span class="score-item__name">Unyike Lintang Kejora</span><span class="score-item__grade grade-c">C+</span></div>
+      <div class="score-item"><span class="score-item__rank">49</span><span class="score-item__name">Yuliyana Maharani</span><span class="score-item__grade grade-b">B+</span></div>
+      <div class="score-item"><span class="score-item__rank">50</span><span class="score-item__name">Zahra Difyatus Syifa</span><span class="score-item__grade grade-d">D</span></div>
+      <div class="score-item"><span class="score-item__rank">51</span><span class="score-item__name">Marizka</span><span class="score-item__grade grade-c">C+</span></div>
+      <div class="score-item"><span class="score-item__rank">52</span><span class="score-item__name">Hilwa</span><span class="score-item__grade grade-b">B+</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <strong>Kirmago</strong> &nbsp;-&nbsp; Photography Contest &nbsp;-&nbsp; MMXXV
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+     SAFE RUNNER — setiap fungsi dibungkus, error diisolasi
+     ============================================================ */
+  function safe(label, fn) {
+    try { fn(); }
+    catch (e) {
+      if (window.console && console.warn) {
+        console.warn('[KIRMAGO/' + label + ']', e);
+      }
+    }
+  }
+
+  /* ============================================================
+     HELPER
+     ============================================================ */
+  function driveUrl(fileId, size) {
+    return 'https://drive.google.com/thumbnail?id=' + fileId + '&sz=' + (size || 'w1600');
+  }
+  function $(s) { return document.querySelector(s); }
+
+  /* ============================================================
+     KONFIGURASI
+     ============================================================ */
+  var CONFIG = {
+    winners: {
+      juara1:  { fileId: '1uRES7-1jUp_c5fKPz1BBPP5cFr-I0KGv', name: 'Irene Althafunnida', grade: 'S+' },
+      juara2:  { fileId: '1PHR1WzxDUViS4N6XCPurAi8HJDfp26jV', name: 'Najma Asyfa Putri',  grade: 'A'  },
+      juara3:  { fileId: '1334-q2mpkVkw9Lj13e06acTOW1bjA7nC', name: 'Selvi Ainur Risma',  grade: 'A-' },
+      favorit: { fileId: '1ViHylm8M96a33KJueLLRmc-vNPkGOI0G', name: 'Ursila Maulida',     grade: 'A-' }
+    },
+    photoWall: [
+      '1uRES7-1jUp_c5fKPz1BBPP5cFr-I0KGv',
+      '1PHR1WzxDUViS4N6XCPurAi8HJDfp26jV',
+      '1334-q2mpkVkw9Lj13e06acTOW1bjA7nC',
+      '1ViHylm8M96a33KJueLLRmc-vNPkGOI0G'
+    ],
+    heroBgId: '1uRES7-1jUp_c5fKPz1BBPP5cFr-I0KGv'
+  };
+
+  /* ============================================================
+     1. PHOTO WALL — pakai string concat, bukan template literal
+     ============================================================ */
+  safe('photoWall', function () {
+    var ids = CONFIG.photoWall;
+    if (!ids || !ids.length) return;
+
+    var rowHtml = '';
+    for (var i = 0; i < ids.length; i++) {
+      rowHtml += '<div class="photo-wall__item">'
+              +   '<img src="' + driveUrl(ids[i], 'w800') + '" alt="" loading="lazy" data-fallback>'
+              + '</div>';
+    }
+    // duplicate biar loop mulus
+    var doubled = rowHtml + rowHtml;
+
+    var r1 = document.getElementById('row1');
+    var r2 = document.getElementById('row2');
+    var r3 = document.getElementById('row3');
+    if (r1) r1.innerHTML = doubled;
+    if (r2) r2.innerHTML = doubled;
+    if (r3) r3.innerHTML = doubled;
+  });
+
+  /* ============================================================
+     2. WINNER IMAGES + NAMA
+     ============================================================ */
+  safe('winners', function () {
+    var W = CONFIG.winners;
+
+    function setImg(id, fileId, size) {
+      var el = document.getElementById(id);
+      if (el) el.src = driveUrl(fileId, size);
+    }
+    function setText(id, text) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = text;
+    }
+
+    // Foto
+    setImg('imgJuara1', W.juara1.fileId, 'w2000');
+    setImg('imgJuara2', W.juara2.fileId, 'w2000');
+    setImg('imgJuara3', W.juara3.fileId, 'w2000');
+    setImg('imgFavorit', W.favorit.fileId, 'w2000');
+    setImg('recapImg1', W.juara1.fileId, 'w1200');
+    setImg('recapImg2', W.juara2.fileId, 'w1200');
+    setImg('recapImg3', W.juara3.fileId, 'w1200');
+    setImg('recapImgFav', W.favorit.fileId, 'w1200');
+    setImg('heroBg', CONFIG.heroBgId, 'w2000');
+
+    // Nama juara
+    setText('nameJuara1', W.juara1.name);
+    setText('nameJuara2', W.juara2.name);
+    setText('nameJuara3', W.juara3.name);
+    setText('nameFavorit', W.favorit.name);
+
+    // Nilai
+    setText('gradeJuara1', W.juara1.grade);
+    setText('gradeJuara2', W.juara2.grade);
+    setText('gradeJuara3', W.juara3.grade);
+    setText('gradeFavorit', W.favorit.grade);
+
+    // Nama di recap
+    setText('recapName1', W.juara1.name);
+    setText('recapName2', W.juara2.name);
+    setText('recapName3', W.juara3.name);
+    setText('recapNameFav', W.favorit.name);
+  });
+
+  /* ============================================================
+     3. IMAGE FALLBACK — onerror, hanya sekali per img
+     ============================================================ */
+  safe('imageFallback', function () {
+    var imgs = document.querySelectorAll('img[data-fallback]');
+    for (var i = 0; i < imgs.length; i++) {
+      (function (img) {
+        img.addEventListener('error', function handler() {
+          img.removeEventListener('error', handler);
+          var parent = img.parentNode;
+          if (!parent) return;
+          if (parent.querySelector('.img-fallback')) return;
+          var fb = document.createElement('div');
+          fb.className = 'img-fallback';
+          fb.textContent = 'Foto belum tersedia';
+          parent.appendChild(fb);
+          img.style.display = 'none';
+        });
+      })(imgs[i]);
+    }
+  });
+
+  /* ============================================================
+     4. GRAIN — pakai setTimeout, ada stopToken
+     ============================================================ */
+  safe('grain', function () {
+    var canvas = document.getElementById('grainCanvas');
+    if (!canvas || !canvas.getContext) return;
+
+    var ctx;
+    try { ctx = canvas.getContext('2d'); } catch (e) { return; }
+    if (!ctx) return;
+
+    var W = 220, H = 220;
+    canvas.width = W;
+    canvas.height = H;
+
+    // Pre-render 5 frame
+    var frames = [];
+    try {
+      for (var f = 0; f < 5; f++) {
+        var id = ctx.createImageData(W, H);
+        var d = id.data;
+        for (var i = 0; i < d.length; i += 4) {
+          var v = (Math.random() * 255) | 0;
+          d[i] = d[i + 1] = d[i + 2] = v;
+          d[i + 3] = 22;
+        }
+        frames.push(id);
+      }
+    } catch (e) { return; }
+
+    var idx = 0;
+    var stopped = false;
+    var INTERVAL = 1000 / 14;
+    var tickCount = 0;
+    var MAX_TICKS = 60 * 60 * 10; // ~10 menit → auto-stop
+
+    function tick() {
+      if (stopped) return;
+      if (tickCount++ > MAX_TICKS) { stopped = true; return; }
+
+      idx = (idx + 1) % frames.length;
+      try { ctx.putImageData(frames[idx], 0, 0); } catch (e) { stopped = true; return; }
+
+      // kalau tab nggak kelihatan, pelanin
+      var delay = document.hidden ? 500 : INTERVAL;
+      setTimeout(tick, delay);
+    }
+    setTimeout(tick, INTERVAL);
+  });
+
+  /* ============================================================
+     5. PROGRESS BAR
+     ============================================================ */
+  safe('progress', function () {
+    var bar = document.getElementById('progress');
+    if (!bar) return;
+    var scheduled = false;
+
+    function update() {
+      scheduled = false;
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      var p = h > 0 ? (window.scrollY / h) * 100 : 0;
+      bar.style.width = p + '%';
+    }
+    window.addEventListener('scroll', function () {
+      if (!scheduled) {
+        scheduled = true;
+        window.requestAnimationFrame(update);
+      }
+    }, { passive: true });
+    update();
+  });
+
+  /* ============================================================
+     6. SCROLL REVEAL
+     ============================================================ */
+  safe('scrollReveal', function () {
+    var targets = document.querySelectorAll('[data-reveal], [data-winner]');
+    if (!targets.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      for (var i = 0; i < targets.length; i++) targets[i].classList.add('is-in');
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) {
+          entries[i].target.classList.add('is-in');
+          io.unobserve(entries[i].target);
+        }
+      }
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+    for (var j = 0; j < targets.length; j++) io.observe(targets[j]);
+  });
+
+  /* ============================================================
+     7. TOMBOL — Mulai + Continue
+     ============================================================ */
+  safe('buttons', function () {
+    var startBtn = document.getElementById('startBtn');
+    var continueBtn = document.getElementById('continueBtn');
+    var wall = document.getElementById('photo-wall');
+    var juara3 = document.getElementById('juara-3');
+
+    function scrollTo(el, offset) {
+      if (!el) return;
+      var y = el.getBoundingClientRect().top + window.scrollY + (offset || 0);
+      try { window.scrollTo({ top: y, behavior: 'smooth' }); }
+      catch (e) { window.scrollTo(0, y); }
+    }
+
+    if (startBtn) startBtn.addEventListener('click', function () { scrollTo(wall, -10); });
+    if (continueBtn) continueBtn.addEventListener('click', function () { scrollTo(juara3, -10); });
+  });
+
+  /* ============================================================
+     END
+     ============================================================ */
+  if (window.console && console.log) {
+    console.log('[KIRMAGO] init complete');
+  }
+
+})();
+</script>
+
+</body>
+</html>
